@@ -1,0 +1,18 @@
+{
+  "name": "nti-consulting",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.9.2",
+    "astro-purgecss": "^5.2.3",
+    "bootstrap": "^5.3.6",
+    "purgecss": "^7.0.2",
+    "sass": "^1.89.2"
+  }
+}

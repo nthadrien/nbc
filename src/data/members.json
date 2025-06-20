@@ -1,0 +1,29 @@
+[
+    {
+        "id":1,
+        "name":"Nti Boloa Alphonse Emmanuel",
+        "role":"CEO of Nti COnsulting",
+        "pp": {
+            "src":"/imgs/team2.webp",
+            "alt":"image du CEO"
+        }
+    },
+    {
+        "id":2,
+        "name":"Nti Boloa Alphonse Emmanuel",
+        "role":"CEO of Nti COnsulting",
+        "pp": {
+            "src":"/imgs/team2.webp",
+            "alt":"image du CEO"
+        }
+    },
+    {
+        "id":3,
+        "name":"Nti Boloa Alphonse Emmanuel",
+        "role":"CEO of Nti COnsulting",
+        "pp": {
+            "src":"/imgs/team2.webp",
+            "alt":"image du CEO"
+        }
+    }
+]

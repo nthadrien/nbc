@@ -1,0 +1,26 @@
+---
+import TestimonyCard from "./cards/testimonyCard.astro"
+
+
+---
+
+<section class="container-fluid d-flex flex-column gap-3 justify-content-center align-items-center py-5">
+
+    <div class="col-12 col-lg-8 col-xxl-7 text-center">
+        <h3 class="display-6 fw-bold">Clients</h3>
+        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta harum ipsum venenatis metus sem veniam eveniet aperiam suscipit.</p>
+    </div>
+
+    <aside class="container row g-3 mx-auto">
+        {[1,2,3].map( testi => <div class="col-md-6 col-lg-4">
+            <TestimonyCard />
+        </div>)}
+    </aside>
+
+    <div class="container text-center">
+        o o o
+    </div>
+
+</section>
+
+

@@ -1,0 +1,32 @@
+---
+
+import { getCollection } from "astro:content";
+import TeamCard from "./cards/teamCard.astro";
+
+const members = await getCollection("members");
+---
+
+<section id="team" class="container-fluid d-flex flex-column gap-3 justify-content-center align-items-center py-5">
+
+
+	<div class="container row align-items-center">
+
+        <div class="col-lg-6 order-2 order-lg-1">
+            <div class="row g-3">
+                {members.map( (member, index) => <div data-iobs="n/a" data-iobs-transition={(index/1.2)+"s"} class="col-6">
+                    <TeamCard item={member} />
+                </div>)}
+            </div>
+        </div>
+
+        <div class="col-lg-6 order-1 order-lg-2">
+            <div class="ms-lg-5 mb-5">
+                <span class="text-info">Our Team</span>
+                <h2 class="display-6 fw-bold mb-3 mb-xl-5">Meet the Team</h2>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta harum ipsum venenatis metus sem veniam eveniet aperiam suscipit.</p>
+            </div>
+        </div>
+		
+	</div>
+
+</section>

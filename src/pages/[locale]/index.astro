@@ -1,0 +1,75 @@
+---
+import type { GetStaticPaths } from "astro";
+import { languages } from "../../i18n/ui";
+
+import BlogCard from "../../components/cards/blogCard.astro";
+import ContactUs from "../../components/contactUs.astro";
+import Features from "../../components/features.astro";
+import HomeHeader from "../../components/headers/homeHeader.astro";
+import Services from "../../components/services.astro";
+import Statistics from "../../components/statistics.astro";
+import Steps from "../../components/steps.astro";
+import Layout from "../../layouts/Layout.astro";
+
+export const getStaticPaths = (() => {
+	return Object.keys(languages).map( locale => ({ 
+		params : { locale }
+	}));
+}) satisfies GetStaticPaths;
+
+---
+
+<Layout>
+	<HomeHeader />
+
+	<div class="position-relative" style="top:-2rem;">
+		<Statistics />
+	</div>
+
+	<section class="py-5">
+		<div class="container">
+			<div class="row align-items-center">
+				<div data-iobs="down" data-iobs-transition="0.5s" class="col-lg-2">
+					<h2 class="display-5 fw-bold">100+</h2>
+					<div>
+						Projets
+					</div>
+				</div>
+				<div data-iobs="down" data-iobs-transition="1s"  class="col-lg-8 my-3 my-lg-0 text-center">
+					<h2 class="display-5 fw-bold mb-2">The Possibilities Are Endless</h2>
+					<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, non recusandae nulla rerum minus</p>
+				</div>
+				<div data-iobs="down" data-iobs-transition="1.2s"  class="col-lg-2 text-lg-end">
+					<h2 class="display-5 fw-bold">100+</h2>
+					<div>
+						Etudes de feasibility
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+	<Features />
+	<Steps />
+	<Services />
+	<section class="container-fluid d-flex flex-column gap-3 justify-content-center align-items-center py-5 bg-body-tertiary">
+
+		<aside class="col-12 col-lg-8 col-xxl-7 text-center">
+			<span class="text-muted">Blog</span>
+			<h3 class="display-6 fw-bold">Latest Updates</h3>
+			<p class="lead">Soluta harum ipsum venenatis metus sem veniam eveniet aperiam suscipit.</p>
+		</aside>
+
+		<aside class="container mx-auto d-flex justify-content-md-center gap-2 overflow-x-auto">
+			{[1,2,3].map( item => <div style="min-width: 250px;max-width: 280px;" class="flex-shrink-0">
+				<BlogCard />
+			</div>)}
+		</aside>
+
+		<a class="btn btn-primary" href="/blog">see more</a>
+
+	</section>
+	<ContactUs />
+</Layout>
+
+		

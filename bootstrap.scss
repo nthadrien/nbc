@@ -1,0 +1,132 @@
+// Configuration
+@import "./node_modules/bootstrap/scss/functions.scss";
+// 2. Include any default variable overrides here
+$primary: #F4B424;
+$secondary: rgb(79, 76, 75);
+$info : #B30404 ;
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+
+@import "./node_modules/bootstrap/scss/variables.scss";
+@import "./node_modules/bootstrap/scss/variables-dark.scss";
+@import "./node_modules/bootstrap/scss/maps.scss";
+@import "./node_modules/bootstrap/scss/mixins.scss";
+@import "./node_modules/bootstrap/scss/utilities.scss";
+
+// Layout & components
+@import "./node_modules/bootstrap/scss/root.scss";
+@import "./node_modules/bootstrap/scss/reboot.scss";
+@import "./node_modules/bootstrap/scss/type.scss";
+// @import "./node_modules/bootstrap/scss/images.scss";
+@import "./node_modules/bootstrap/scss/containers.scss";
+@import "./node_modules/bootstrap/scss/grid.scss";
+// @import "./node_modules/bootstrap/scss/tables.scss";
+@import "./node_modules/bootstrap/scss/forms.scss";
+@import "./node_modules/bootstrap/scss/buttons.scss";
+@import "./node_modules/bootstrap/scss/transitions.scss";
+@import "./node_modules/bootstrap/scss/dropdown.scss";
+// @import "./node_modules/bootstrap/scss/button-group.scss";
+@import "./node_modules/bootstrap/scss/nav.scss";
+@import "./node_modules/bootstrap/scss/navbar.scss";
+// @import "./node_modules/bootstrap/scss/card.scss";
+@import "./node_modules/bootstrap/scss/accordion.scss";
+// @import "./node_modules/bootstrap/scss/breadcrumb.scss";
+// @import "./node_modules/bootstrap/scss/pagination.scss";
+// @import "./node_modules/bootstrap/scss/badge.scss";
+// @import "./node_modules/bootstrap/scss/alert.scss";
+@import "./node_modules/bootstrap/scss/progress.scss";
+// @import "./node_modules/bootstrap/scss/list-group.scss";
+@import "./node_modules/bootstrap/scss/close.scss";
+// @import "./node_modules/bootstrap/scss/toasts.scss";
+@import "./node_modules/bootstrap/scss/modal.scss";
+// @import "./node_modules/bootstrap/scss/tooltip.scss";
+// @import "./node_modules/bootstrap/scss/popover.scss";
+// @import "./node_modules/bootstrap/scss/carousel.scss";
+// @import "./node_modules/bootstrap/scss/spinners.scss";
+// @import "./node_modules/bootstrap/scss/offcanvas.scss";
+// @import "./node_modules/bootstrap/scss/placeholders.scss";
+
+// Helpers
+@import "./node_modules/bootstrap/scss/helpers.scss";
+
+// Utilities
+@import "./node_modules/bootstrap/scss/utilities/api.scss";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 12px ;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar-brand {
+    line-height: 7pt;
+}
+
+.container {
+    max-width: 1028px;
+}
+
+.hero1 {
+    background: rgba(0, 0, 0, 0.49) url("/imgs/hero1.avif") no-repeat center;
+}
+
+.hero2 {
+    background: rgba(0, 0, 0, 0.49) url("/imgs/hero2.avif") no-repeat center;
+}
+
+.hero3 {
+    background: rgba(0, 0, 0, 0.49) url("/imgs/hero6.avif") no-repeat center;
+}
+
+.hero1, .hero2, .hero3 {
+    background-size: cover;
+    background-blend-mode:color;
+    color: white;
+}
+
+.small {
+    font-size: smaller;
+}
+
+.page-hero {
+    min-height: max(420px,70vh);
+    max-height: 580px;
+}
+
+[data-iobs] {
+    opacity: 0;
+    transition: all 1.1s ease-out;
+}
+
+[data-iobs="left"] {
+    transform: translateX(-5rem);
+}
+
+[data-iobs="right"] {
+    transform: translateX(5rem);
+}
+
+[data-iobs="up"] {
+    transform: translateY(-5rem);
+}
+
+[data-iobs="down"] {
+    transform: translateY(5rem);
+}
+
+[data-iobs].show {
+    opacity: 1;
+    transform: translate(0,0);
+}
+
+a:hover {
+    font-weight: bolder;
+    color: $secondary;
+}

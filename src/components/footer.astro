@@ -1,0 +1,65 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils"
+import Logo from "./logo.astro"
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
+
+const links = [
+    {name: t('nav.home'), to:"/#"},
+    {name:"Blogs", to:"/#"},
+    {name:"F.A.Q", to:"/about#faq"},
+    {name: t('nav.about'), to:"/about#us"},
+    {name: t('nav.contact'), to:"/#contacts"},
+]
+
+const socials = [
+    { icon: "bi bi-twitter-x", to:"#"},
+    { icon: "bi bi-facebook mx-1", to:"#"},
+    { icon: "bi bi-whatsapp", to:"#"}
+]
+
+const address = [
+    { icon: "bi bi-geo-alt-fill", to:"Cameroun , Yaounde : Marche etoudi"},
+    { icon: "bi bi-telephone-fill", to:"+ 237 845-89-097"},
+    { icon: "bi bi-mailbox2-flag", to:"P.O BOX 3456-09U"},
+]
+---
+<footer class="py-4 border-top bg-gradient">
+
+    <section class="container row g-3 justify-content-between mx-auto pt-4 pb-4 pb-lg-5">
+
+        <aside class="col-lg-5 text-center text-lg-start">
+            <Logo />
+            <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer imperdiet non turpis eget viverra. Vivamus mattis nisi augue, in ultrices.</p>
+            <div class="mb-3">
+                {socials.map( it => <a href={it.to} class={`fs-6 ${it.icon} btn btn-primary`} />)}
+            </div>
+        </aside>
+
+        <aside class="col-lg-3 text-center text-lg-end">
+            <h5>Pages</h5>
+            {links.map( item => <a class="d-lg-block mb-1 mx-2 mx-lg-0" href={item.to}> {item.name}</a>)}
+        </aside>
+
+        <aside class="col-lg-3 text-center text-lg-end">
+            <h5>Address</h5>
+            <p class="mb-1">Mountain View</p>
+            <p class="mb-1">California, United States</p>
+            <p class="mb-1">Tel: +1 123-456-7890</p>
+            <p class="mb-0"><a href="">hello@yourdomain.com</a></p>
+        </aside>
+
+        <div class="border-top d-lg-none"></div>
+
+    </section>
+
+    <small class="container nav justify-content-lg-between p-2 pt-4 small mx-auto">
+        <span>
+            &copy; { new Date().getFullYear()} Nti business consulting. All rights reserved.
+            <a class="d-block d-lg-inline mx-lg-2" href="">Privacy Policy</a> 
+            <a class="d-block d-lg-inline" href="">Terms of Service</a>
+        </span>
+        <a href="#">Proudly built & designd by nzenda-group</a>
+    </small>
+</footer>
