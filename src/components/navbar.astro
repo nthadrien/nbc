@@ -1,7 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import { languages } from "../i18n/ui";
-import { getLangFromUrl, useTranslations, type LangType } from "../i18n/utils";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import Logo from "./logo.astro";
 
 
@@ -67,12 +67,12 @@ const services = await getCollection("services",({ id }) => {
                     {t('nav.about')}
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href={`/${locale}/about-us#`}>{t('nav.who')}</a></li>
+                    <li><a class="dropdown-item" href={`/github-pages/${locale}/about-us#`}>{t('nav.who')}</a></li>
                     <li>
-                        <a class="dropdown-item" href={`/${locale}/about-us#team`}>Team</a>
+                        <a class="dropdown-item" href={`/github-pages/${locale}/about-us#team`}>Team</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href={`/${locale}/about-us#faq`}>faq</a>
+                        <a class="dropdown-item" href={`/github-pages/${locale}/about-us#faq`}>faq</a>
                     </li>
                 </ul>
             </div>

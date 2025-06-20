@@ -13,5 +13,6 @@ export default defineConfig({
       prefixDefaultLocale: true
     }
   },
-  site: 'https://nthadrien.github.io/github-pages',
+  site: 'https://nthadrien.github.io',
+   base: '/github-pages',
 });
