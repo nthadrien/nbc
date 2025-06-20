@@ -13,6 +13,6 @@ export default defineConfig({
       prefixDefaultLocale: true
     }
   },
-  site: 'https://hkbertoson.github.io',
+  site: 'https://nthadrien.github.io',
   base: '/github-pages',
 });
