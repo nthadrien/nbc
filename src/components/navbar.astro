@@ -56,7 +56,7 @@ const services = await getCollection("services",({ id }) => {
         <ul class="collapse navbar-collapse navbar-nav justify-content-lg-end gap-2 p-1 text-white" id="wbsNavbar">
 
 
-            <a class="nav-link text-white active" aria-current="page" href="/#">{t('nav.home')}</a>
+            <a class="nav-link text-white active" aria-current="page" href="#">{t('nav.home')}</a>
 
             <div class=" dropdown">
                 <a
@@ -67,12 +67,12 @@ const services = await getCollection("services",({ id }) => {
                     {t('nav.about')}
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href={`/github-pages/${locale}/about-us#`}>{t('nav.who')}</a></li>
+                    <li><a class="dropdown-item" href={`/nbc${locale}/about-us#`}>{t('nav.who')}</a></li>
                     <li>
-                        <a class="dropdown-item" href={`/github-pages/${locale}/about-us#team`}>Team</a>
+                        <a class="dropdown-item" href={`/nbc${locale}/about-us#team`}>Team</a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href={`/github-pages/${locale}/about-us#faq`}>faq</a>
+                        <a class="dropdown-item" href={`/nbc${locale}/about-us#faq`}>faq</a>
                     </li>
                 </ul>
             </div>
@@ -95,10 +95,10 @@ const services = await getCollection("services",({ id }) => {
                 </div>
             </div>
 
-            <a class="nav-link text-white active" aria-current="page" href={`/${locale}/blog`}>Blog</a>
-            <a class="nav-link text-white active" aria-current="page" href={`/${locale}/blog`}>Projets</a>
+            <a class="nav-link text-white active" aria-current="page" href={`/nbc/${locale}/blog`}>Blog</a>
+            <a class="nav-link text-white active" aria-current="page" href={`/nbc/${locale}/blog`}>Projets</a>
             
-            <a href="/#contact-us" class="btn btn-primary">{t('nav.contact')}</a>
+            <a href="/nbc/#contact-us" class="btn btn-primary">{t('nav.contact')}</a>
             
         </ul>
 

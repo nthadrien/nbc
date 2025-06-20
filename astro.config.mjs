@@ -13,5 +13,6 @@ export default defineConfig({
       prefixDefaultLocale: true
     }
   },
-  site: 'https://nthadrien.github.io/nbc',
+  site: 'https://nthadrien.github.io',
+  base: 'nbc',
 });
