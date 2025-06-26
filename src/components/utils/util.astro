@@ -1,3 +1,24 @@
-<div>
-    
+---
+import { getLangFromUrl, useTranslations } from '../../i18n/utils.ts';
+import ThemeSwitcher from './themeSwitcher.astro';
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
+
+---
+
+
+<div style="right:3rem;" class="position-fixed top-50 translate-middle-y d-flex">
+    <button class="btn btn-info" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <i class="bi bi-question-circle-fill"></i>
+    </button>
+    <div class="dropdown-menu  dropdown-menu-start">
+        <a class="btn btn-outline-scondary" href="#">
+            <i class="bi bi-arrow-up"></i>
+        </a>
+        <ThemeSwitcher />
+        <button title={t('nav.contact')} data-bs-toggle="modal" data-bs-target="#contactUs" class="btn btn-primary">
+            <i class="bi bi-headset"></i>
+        </button>
+    </div>
 </div>

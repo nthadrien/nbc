@@ -1,9 +1,9 @@
 // Configuration
 @import "./node_modules/bootstrap/scss/functions.scss";
 // 2. Include any default variable overrides here
-$primary: #F4B424;
-$secondary: rgb(79, 76, 75);
-$info : #B30404 ;
+// $primary: #F4B424;
+// $secondary: rgb(79, 76, 75);
+// $info : #B30404 ;
 
 // 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
 
@@ -130,3 +130,17 @@ a:hover {
     font-weight: bolder;
     color: $secondary;
 }
+
+// color modes dark and light and auto
+body[data-iobs="dark"] {
+    .sun { display: inline; }
+    .moon, .auto-theme {display: none;}
+}
+body[data-iobs="light"] {
+    .moon { display: inline; }
+    .sun, .auto-theme {display: none;}
+}
+
+.sun, .moon {display: none;}
+.auto-theme { display: inline ;}
+

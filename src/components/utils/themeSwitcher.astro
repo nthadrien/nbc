@@ -1,0 +1,35 @@
+<button class="btn" id="themeToggle">
+    <i class="bi bi-sun sun" />
+    <i class="bi bi-moon moon" />   
+    <i class="bi bi-brightness-alt-low-fill auto-theme" />    
+</button>
+
+
+
+<script is:inline>
+
+    const theme = (() => {
+        const localStorageTheme = localStorage?.getItem("theme") ?? '';
+        if (['dark', 'light'].includes(localStorageTheme)) return localStorageTheme;
+        if (window.matchMedia('(prefers-color-scheme: dark)').matches) return 'dark';
+        return 'light';
+    })();
+  
+    
+    if (theme === 'auto') {
+      document.body.setAttribute('data-bs-theme', (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'))
+    } else {
+      document.body.setAttribute('data-bs-theme', theme)
+    }
+  
+    window.localStorage.setItem('theme', theme);
+  
+    const handleToggleClick = () => {
+      const isDark = document.body.getAttribute('data-bs-theme') === "dark"  ? "light":  "dark" ;
+      document.body.setAttribute('data-bs-theme', isDark);
+      localStorage.setItem("theme", isDark );
+    }
+  
+    document.getElementById("themeToggle")?.addEventListener("click", handleToggleClick);
+    
+</script>
