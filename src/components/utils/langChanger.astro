@@ -1,0 +1,19 @@
+---
+
+import { languages } from "../../i18n/ui";
+
+---
+
+<div class="dropdown">
+    <button
+        class="btn btn-outline-light"
+        data-bs-toggle="dropdown"
+        aria-expanded="false">
+        <i class="bi bi-globe" />
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end">
+        {Object.keys(languages).map( (lang) => <li><a class="dropdown-item" href={`/${lang}`}>
+            { lang == "en" ? languages[lang] :  languages.fr }
+        </a></li>)}
+    </ul>
+</div>

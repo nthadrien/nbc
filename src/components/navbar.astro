@@ -1,8 +1,8 @@
 ---
 import { getCollection } from "astro:content";
-import { languages } from "../i18n/ui";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import Logo from "./logo.astro";
+import LangChanger from "./utils/langChanger.astro";
 
 
 const locale = getLangFromUrl(Astro.url);
@@ -14,30 +14,28 @@ const services = await getCollection("services",({ id }) => {
 
 ---
 
-<header class="container-fluid text-bg-primary">
+<header class="container-fluid border-bottom">
 
-    <section class="container top-50 mx-auto d-none d-md-flex justify-content-between align-itms-center px-2 py-1">
+    <section class="container mx-auto d-none d-md-flex justify-content-between align-itms-center px-2 py-1">
 
-        <div>
+        <small>
             <i class="bi bi-phone"></i>
             Book a consultation today example@mailbox.com
-        </div>
+        </small>
 
 
-        <div>
+        <small>
             EN | FR
-        </div>
+        </small>
 
     </section>
-
 
 </header>
 
 <nav
-    style="top:2rem"
-    class="container-fluid navbar navbar-expand-lg position-absolute" aria-label="website main navbar"
+    class="container-fluid navbar navbar-expand-lg" aria-label="website main navbar"
 >
-    <section class="container mx-auto text-white">
+    <section class="container mx-auto">
 
         <Logo />
 
@@ -53,69 +51,59 @@ const services = await getCollection("services",({ id }) => {
             <span class="navbar-toggler-icon"></span>
         </button>       
 
-        <ul class="collapse navbar-collapse navbar-nav justify-content-lg-end gap-2 p-1 text-white" id="wbsNavbar">
+        <ul class="collapse navbar-collapse navbar-nav justify-content-lg-between gap-2 p-1 text-white" id="wbsNavbar">
 
 
-            <a class="nav-link text-white active" aria-current="page" href="#">{t('nav.home')}</a>
+            <li class="d-flex flex-column flex-lg-row mx-auto">
 
-            <div class=" dropdown">
-                <a
-                    class="nav-link text-white dropdown-toggle"
-                    href="#"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    {t('nav.about')}
-                </a>
-                <ul class="dropdown-menu">
-                    <li><a class="dropdown-item" href={`/nbc${locale}/about-us#`}>{t('nav.who')}</a></li>
-                    <li>
-                        <a class="dropdown-item" href={`/nbc${locale}/about-us#team`}>Team</a>
-                    </li>
-                    <li>
-                        <a class="dropdown-item" href={`/nbc${locale}/about-us#faq`}>faq</a>
-                    </li>
-                </ul>
-            </div>
+                <a class="nav-link text-white active" aria-current="page" href="#">{t('nav.home')}</a>
 
-
-            <div class=" dropdown">
-                <a
-                    class="nav-link text-white dropdown-toggle"
-                    href="#"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false">
-                    {t('nav.services')}
-                </a>
-                <div class="dropdown-menu end-50 translate-middle-x">
-                    <ul style="min-width: 70vw;" class="list-unstyled row row-cols-1 row-cols-lg-2 g-2">
-                        {services.map( service => <li>
-                            <a class="dropdown-item" href="#">{service.data.title}</a>
-                        </li>)}
+                <div class=" dropdown">
+                    <a
+                        class="nav-link text-white dropdown-toggle"
+                        href="#"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        {t('nav.about')}
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href={`/nbc/${locale}/about-us#`}>{t('nav.who')}</a></li>
+                        <li>
+                            <a class="dropdown-item" href={`/nbc/${locale}/about-us#team`}>Team</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href={`/nbc/${locale}/about-us#faq`}>faq</a>
+                        </li>
                     </ul>
                 </div>
-            </div>
 
-            <a class="nav-link text-white active" aria-current="page" href={`/nbc/${locale}/blog`}>Blog</a>
-            <a class="nav-link text-white active" aria-current="page" href={`/nbc/${locale}/blog`}>Projets</a>
+
+                <div class=" dropdown">
+                    <a
+                        class="nav-link text-white dropdown-toggle"
+                        href="#"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false">
+                        {t('nav.services')}
+                    </a>
+                    <div class="dropdown-menu end-50 translate-middle-x">
+                        <ul style="min-width: 70vw;" class="list-unstyled row row-cols-1 row-cols-lg-2 g-2">
+                            {services.map( service => <li>
+                                <a class="dropdown-item" href="#">{service.data.title}</a>
+                            </li>)}
+                        </ul>
+                    </div>
+                </div>
+
+                <a class="nav-link text-white active" aria-current="page" href={`/nbc/${locale}/blog`}>Blog</a>
+                <a class="nav-link text-white active" aria-current="page" href={`/nbc/${locale}/blog`}>Projets</a>
+
+            </li>
             
-            <a href="/nbc/#contact-us" class="btn btn-primary">{t('nav.contact')}</a>
+            <button data-bs-toggle="modal" data-bs-target="#contactUs" class="btn btn-primary">{t('nav.contact')}</button>
             
         </ul>
 
-
-        <div class="dropdown ms-2">
-            <button
-                class="btn btn-outline-light"
-                data-bs-toggle="dropdown"
-                aria-expanded="false">
-                <i class="bi bi-globe" />
-            </button>
-            <ul class="dropdown-menu dropdown-menu-lg-end">
-                {Object.keys(languages).map( (lang) => <li><a class="dropdown-item" href={`/${lang}`}>
-                    { lang == "en" ? languages[lang] :  languages.fr }
-                </a></li>)}
-            </ul>
-        </div>
-
+        <div class="ms-2"><LangChanger /></div>
     </section>
 </nav>
