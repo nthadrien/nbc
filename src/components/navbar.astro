@@ -51,16 +51,16 @@ const services = await getCollection("services",({ id }) => {
             <span class="navbar-toggler-icon"></span>
         </button>       
 
-        <ul class="collapse navbar-collapse navbar-nav justify-content-lg-between gap-2 p-1 text-white" id="wbsNavbar">
+        <ul class="collapse navbar-collapse navbar-nav justify-content-lg-between gap-2 p-1" id="wbsNavbar">
 
 
             <li class="d-flex flex-column flex-lg-row mx-auto">
 
-                <a class="nav-link text-white active" aria-current="page" href={`/${locale}/`}>{t('nav.home')}</a>
+                <a class="nav-link active" aria-current="page" href={`/nbc/${locale}/`}>{t('nav.home')}</a>
 
                 <div class=" dropdown">
                     <a
-                        class="nav-link text-white dropdown-toggle"
+                        class="nav-link dropdown-toggle"
                         href="#"
                         data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -80,7 +80,7 @@ const services = await getCollection("services",({ id }) => {
 
                 <div class=" dropdown">
                     <a
-                        class="nav-link text-white dropdown-toggle"
+                        class="nav-link dropdown-toggle"
                         href="#"
                         data-bs-toggle="dropdown"
                         aria-expanded="false">
@@ -95,8 +95,8 @@ const services = await getCollection("services",({ id }) => {
                     </div>
                 </div>
 
-                <a class="nav-link text-white active" aria-current="page" href={`/nbc/${locale}/blog`}>Blog</a>
-                <a class="nav-link text-white active" aria-current="page" href={`/nbc/${locale}/blog`}>Projets</a>
+                <a class="nav-link active" aria-current="page" href={`/nbc/${locale}/blog`}>Blog</a>
+                <a class="nav-link active" aria-current="page" href={`/nbc/${locale}/blog`}>Projets</a>
 
             </li>
             

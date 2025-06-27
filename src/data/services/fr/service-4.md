@@ -1,6 +1,6 @@
 ---
 title: Commissariat aux apports
-author: Mr Biloa Gaspard
+author: "2"
 description: Certifier la régularité et la sincérité des comptes annuels des entreprises.
 date: 2020-10-14
 tags: 

@@ -1,6 +1,6 @@
 ---
 title: Revue et certification des états financiers 
-author: Mr Biloa Gaspard
+author: "2"
 description: Seules les personnes inscrites au tableau de l’ordre des experts comptables sont habilitées à certifier les états financiers.
 date: 2023-11-28
 tags: 

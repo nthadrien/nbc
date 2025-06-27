@@ -1,6 +1,6 @@
 ---
 title: Manuel de procédures administratives, financières et comptables
-author: Mr Biloa Gaspard
+author: "2"
 description: Un document nécessaire pour la mise en place d'un système cohérent et transparent au sein de l'organisation d’une entreprise.
 date: 2023-11-28
 tags: 

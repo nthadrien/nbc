@@ -1,0 +1,51 @@
+---
+import type { GetStaticPaths } from "astro";
+import { getCollection, render } from 'astro:content';
+import { languages } from "../../../i18n/ui";
+import type { CollectionEntry } from "astro:content";
+import Layout from "../../../layouts/Layout.astro";
+// 1. Generate a new path for every collection entry
+
+
+export const getStaticPaths = (async() => {
+    const locales = Object.keys(languages);
+    const services = await getCollection("services");
+    const allpages = []
+
+    for (const locale of locales) {
+        for (const service of services) {
+            allpages.push({
+                params: { locale, id: service.data.title },
+                props: {service}
+            })
+        }
+    }
+    console.log( allpages.length)
+    return allpages;
+}) satisfies GetStaticPaths;
+
+interface Props {
+    service: CollectionEntry<"services">
+}
+
+// 2. For your template, you can get the entry directly from the prop
+const { service } = Astro.props;
+const { Content, remarkPluginFrontmatter } = await render(service);
+---
+<Layout title={service.data.title} desc={service.data.description}>
+
+    <p>{remarkPluginFrontmatter.minutesRead}</p>
+
+    <main class="container mx-auto row">
+        <section class="col-lg-8">
+            <h1>{service.data.title}</h1>
+            <Content /> 
+        </section>
+        
+        <aside>
+
+        </aside>
+    </main>
+
+
+</Layout>

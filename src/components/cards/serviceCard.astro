@@ -1,6 +1,7 @@
 ---
 import type { CollectionEntry } from 'astro:content';
 import type { DataEntry } from 'astro:content';
+import { getLangFromUrl } from '../../i18n/utils';
 
 
 
@@ -8,6 +9,9 @@ interface Props {
     item: CollectionEntry<"services">
 }
 const {item} = Astro.props;
+const locale = getLangFromUrl(Astro.url);
+
+const redirectTo = `/nbc/${locale}/services/${item.data.title}`;
 ---
 
 <div data-iobs="down" class="border bg-secondary-subtle h-100 p-3 rounded-2">
@@ -19,7 +23,7 @@ const {item} = Astro.props;
         <p class="mt-3 mb-0">{item.data.description}</p>
     </div>
 
-    <a href={"/"} class="fw-semibold nav-link">
+    <a href={redirectTo} class="fw-semibold nav-link">
         Read more <i class="bi bi-arrow-right" />
     </a>
     
