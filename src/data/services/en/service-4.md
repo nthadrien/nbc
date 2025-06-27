@@ -1,6 +1,6 @@
 ---
 title: Contributions Audit
-author: Mr Biloa Gaspard
+author: "2"
 description: Certify the regularity and fairness of annual company accounts.
 date: 2020-10-14
 tags:
