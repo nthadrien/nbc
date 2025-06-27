@@ -1,6 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-
+import { rehypeHeadingIds } from '@astrojs/markdown-remark';
 import purgecss from 'astro-purgecss';
 
 import sitemap from '@astrojs/sitemap';
@@ -18,6 +18,9 @@ export default defineConfig({
   },
   markdown: {
     remarkPlugins: [remarkReadingTime],
+    rehypePlugins: [
+      rehypeHeadingIds
+    ],
   },
   site: 'https://nthadrien.github.io',
   base: 'nbc',

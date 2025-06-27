@@ -1,0 +1,27 @@
+---
+import type { GetStaticPaths } from "astro";
+import { languages } from "../../../i18n/ui";
+
+import Services from "../../../components/services.astro";
+import Layout from "../../../layouts/Layout.astro";
+
+export const getStaticPaths = (() => {
+	return Object.keys(languages).map( locale => ({ 
+		params : { locale }
+	}));
+}) satisfies GetStaticPaths;
+---
+
+
+<Layout title="services">
+    
+    <header style="min-height: 280px;" class="hero3 p-5 d-flex flex-column justify-content-center align-items-center">
+
+
+        <h1 class="fw-bolder">Services</h1>
+        <p class="text-primary lead"></p>
+
+    </header>
+
+    <Services />
+</Layout>
