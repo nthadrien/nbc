@@ -10,6 +10,7 @@ import Services from "../../components/services.astro";
 import Statistics from "../../components/statistics.astro";
 import Steps from "../../components/steps.astro";
 import Layout from "../../layouts/Layout.astro";
+import LatestPost from "../../components/latestPost.astro";
 
 export const getStaticPaths = (() => {
 	return Object.keys(languages).map( locale => ({ 
@@ -31,23 +32,7 @@ export const getStaticPaths = (() => {
 
 
 	<Statistics />
-	<section class="container-fluid d-flex flex-column gap-3 justify-content-center align-items-center py-5 bg-body-tertiary">
-
-		<aside class="col-12 col-lg-8 col-xxl-7 text-center">
-			<span class="text-muted">Posts</span>
-			<h3 class="display-6 fw-bold">Latest Updates</h3>
-			<p class="lead">Get the lastest on Business, Financial and Accounting topics.</p>
-		</aside>
-
-		<aside class="container mx-auto d-flex justify-content-md-center gap-2 overflow-x-auto">
-			{[1,2,3].map( item => <div style="min-width: 250px;max-width: 280px;" class="flex-shrink-0">
-				<BlogCard />
-			</div>)}
-		</aside>
-
-		<a class="btn btn-primary" href="/blog">see more</a>
-
-	</section>
+	<LatestPost />
 	<ContactUs />
 </Layout>
 
