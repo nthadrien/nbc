@@ -26,13 +26,13 @@ const address = [
 ]
 ---
 
-<footer class="py-4 border-top bg-gradient">
+<footer class="py-4 border-top text-bg-secondary">
 
     <section class="container mx-auto nav justify-content-between px-3">
         <Logo />
 
         <div>
-            {socials.map( it => <a href={it.to} class={`btn btn-outline-primary fs-6 ${it.icon} border-primary rounded-circle ms-lg-3`} />)}
+            {socials.map( it => <a href={it.to} class={`btn btn-outline-light fs-6 ${it.icon} border-light rounded-circle ms-lg-3`} />)}
         </div>
     </section>
 
@@ -68,8 +68,6 @@ const address = [
     <small class="container nav justify-content-lg-between p-2 pt-4 small mx-auto">
         <span>
             &copy; { new Date().getFullYear()} Nti business consulting. All rights reserved.
-            <a class="d-block d-lg-inline mx-lg-2" href="">Privacy Policy</a> 
-            <a class="d-block d-lg-inline" href="">Terms of Service</a>
         </span>
         <a href="#">Proudly built & designd by nzenda-group</a>
     </small>

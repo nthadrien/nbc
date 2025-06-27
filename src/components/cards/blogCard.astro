@@ -1,19 +1,24 @@
 ---
 
 ---
-<div>
+<div class="position-relative p-2">
+
+    <ul class="position-absolute start-0 top-0 nav gap-2 p-4">
+        {[1,2,3,4,5,6,7,8,9,0,12,11,13,14].map( category => <li class="btn btn-sm btn-secondary">ccatego</li>)}
+    </ul>
+
     <img style="height: 220px; width:100%;" alt="" class="bg-dark-subtle rounded" src="/nbc/favicon.svg">
-    <div class="p-1 mb-3">
-        <p style="font-size: smaller;">
-            <a class="text-primary" href="/blog/read">Category</a>
-            <a class="text-primary" href="/blog/read">Category</a>
-            <a class="text-primary" href="/blog/read">Category</a>
-        </p>
-        <a class="fs-4 fw-semibold d-block" href="">A short engaging title going right here to mak it reviewable</a>
-        <span class="text-black-50">27th may 2025</span>
+
+    <div class="p-1">
+        <h4 class="fw-bold">A short engaging title going right here to mak it reviewable</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tristique nec sapien vel bibendum.</p>
-        <a class="icon-link icon-link-hover" href="/">
+
+    
+        <b class="float-start">27th may 2025</b>
+        <a class="icon-link icon-link-hover float-end" href="/">
             Read more <i class="bi bi-chevron-right ms-2 mb-1 small" />
         </a>
+
     </div>
+
 </div>

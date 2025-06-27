@@ -38,8 +38,21 @@ const serviceCollection = defineCollection({
     })
 });
 
+const reviewCollection = defineCollection({
+  loader: file("src/data/testimonials.json"),
+  schema: z.object({
+    id: z.string(),
+    msg: z.string(),
+    pic: z.string(),
+    client: z.string(),
+    profession: z.string(),
+    company: z.string()
+  })
+})
+
 export const collections = {
   'posts': postCollection,
   'members': teamCollection,
-  'services':serviceCollection
+  'services':serviceCollection,
+  'testimonials': reviewCollection
 };

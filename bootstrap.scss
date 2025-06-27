@@ -128,15 +128,15 @@ a {
 
 a:hover {
     font-weight: bolder;
-    color: $secondary;
+    color: $primary;
 }
 
 // color modes dark and light and auto
-body[data-iobs="dark"] {
+body[data-bs-theme="dark"] {
     .sun { display: inline; }
     .moon, .auto-theme {display: none;}
 }
-body[data-iobs="light"] {
+body[data-bs-theme="light"] {
     .moon { display: inline; }
     .sun, .auto-theme {display: none;}
 }
