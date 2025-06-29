@@ -4,25 +4,25 @@
         "name":"Nti Boloa Alphonse Emmanuel",
         "role":"CEO of Nti COnsulting",
         "pp": {
-            "src":"/imgs/team2.webp",
+            "src":"/imgs/team/t-1.jpg",
             "alt":"image du CEO"
         }
     },
     {
         "id":2,
-        "name":"Nti Boloa Alphonse Emmanuel",
+        "name":"Un autre membre 1",
         "role":"CEO of Nti COnsulting",
         "pp": {
-            "src":"/imgs/team2.webp",
+            "src":"/imgs/team/t-2.jpg",
             "alt":"image du CEO"
         }
     },
     {
         "id":3,
-        "name":"Nti Boloa Alphonse Emmanuel",
+        "name":"AUtre membre hahahaha ",
         "role":"CEO of Nti COnsulting",
         "pp": {
-            "src":"/imgs/team2.webp",
+            "src":"/imgs/team/t-3.jpg",
             "alt":"image du CEO"
         }
     }

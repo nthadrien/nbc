@@ -1,0 +1,65 @@
+---
+
+import { languages } from "../../../i18n/ui";
+import type { GetStaticPaths, InferGetStaticParamsType } from "astro";
+import { getCollection } from "astro:content";
+import { postTags } from "../../../content.config";
+
+import BlogCard from "../../../components/cards/blogCard.astro";
+import BlogHeader from "../../../components/headers/blogHeader.astro";
+import Layout from "../../../layouts/Layout.astro";
+import CategoryTags from "../../../components/forms/categoryTags.astro";
+import RecentProjects from "../../../components/recentProjects.astro";
+import Pagination from "../../../components/utils/pagination.astro";
+import PostContactBtn from "../../../components/forms/postContactBtn.astro";
+
+export const getStaticPaths = ( async ({ paginate }) => {
+  const locales = Object.keys(languages);
+  const allPosts = await getCollection("posts");
+  return locales.flatMap( (locale) => {
+    const filteredPosts = allPosts.filter((post) => post.id.includes(locale+"/") );
+    return paginate( filteredPosts, {
+      params: { locale },
+      pageSize: 18
+    });
+  });
+}) satisfies GetStaticPaths;
+
+type Params = InferGetStaticParamsType<typeof getStaticPaths>;
+
+
+const { page } = Astro.props;
+const { pageSize } = Astro.params as Params;
+
+---
+
+<Layout>
+
+    <BlogHeader />
+
+    <main class="py-5 container-xxl">
+
+        <section class="nav gap-3">
+
+            <aside class="col-md-4 col-xl-3 p-3 bg-body-tertiary">
+                <CategoryTags tags={postTags} />
+                <RecentProjects />
+                <PostContactBtn />
+            </aside>
+
+            <aside class="col-md-8 col-xl-9 row g-3 flex-order-2">
+
+                <h4 class="col-12 col-lg-12">Posts </h4>
+
+                {page.data.map( item => <div class="col-12 col-md-6 col-xl-4">
+                    <BlogCard  post={item} />
+                </div>)}
+
+                <Pagination data={page.url} size={pageSize} />
+            </aside>
+
+        </section>       
+
+    </main>
+
+</Layout>

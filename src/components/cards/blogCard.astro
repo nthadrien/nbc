@@ -1,22 +1,34 @@
 ---
+import type { CollectionEntry } from 'astro:content'
+import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
+
+interface Props {
+    post: CollectionEntry<"posts">
+}
+
+const { post } = Astro.props;
 
 ---
-<div class="position-relative p-2">
+<div class="position-relative">
 
-    <ul class="position-absolute start-0 top-0 nav gap-2 p-4">
-        {[1,2,3,4,5,6,7,8,9,0,12,11,13,14].map( category => <li class="btn btn-sm btn-secondary">ccatego</li>)}
-    </ul>
+    <div class="position-absolute start-0 top-0 nav gap-2 p-3">
+        {post.data.tags.map( tag => <a href={`/nbc/${locale}/blog/${tag}`} class="btn btn-sm btn-secondary">
+            {tag}
+        </a>)}
+    </div>
 
-    <img style="height: 220px; width:100%;" alt="" class="bg-dark-subtle rounded" src="/nbc/favicon.svg">
+    <img style="height: 220px; width:100%;" alt={post.data.featuredImg.url} class="bg-dark-subtle" src={`/nbc/${post.data.featuredImg.url}`}>
 
     <div class="p-1">
-        <h4 class="fw-bold">A short engaging title going right here to mak it reviewable</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur tristique nec sapien vel bibendum.</p>
-
-    
-        <b class="float-start">27th may 2025</b>
-        <a class="icon-link icon-link-hover float-end" href="/">
-            Read more <i class="bi bi-chevron-right ms-2 mb-1 small" />
+        <h4 class="fw-bold">{post.data.title}</h4>
+        <span class="text-black-50">{new Date(post.data.publishedDate).toDateString()}</span>
+        <p>{post.data.description}</p>
+       
+        <a class="icon-link icon-link-hover text-capitalize" href={`/nbc/${locale}/blog/${post.data.title}`}>
+            {t("read")} <i class="bi bi-arrow-right ms-2 mb-1 small" />
         </a>
 
     </div>

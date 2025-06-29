@@ -2,7 +2,6 @@
 import type { GetStaticPaths } from "astro";
 import { languages } from "../../i18n/ui";
 
-import BlogCard from "../../components/cards/blogCard.astro";
 import ContactUs from "../../components/contactUs.astro";
 import Features from "../../components/features.astro";
 import HomeHeader from "../../components/headers/homeHeader.astro";
@@ -21,19 +20,19 @@ export const getStaticPaths = (() => {
 ---
 
 <Layout>
+	
 	<HomeHeader />
+
 	<Features />
 	
 	<Services />
 
 	<Steps />
 
-
-
-
 	<Statistics />
+	
 	<LatestPost />
+	
 	<ContactUs />
-</Layout>
 
-		
+</Layout>

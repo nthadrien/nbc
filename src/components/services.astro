@@ -3,27 +3,24 @@ import { getCollection } from "astro:content"
 import ServiceCard from "./cards/serviceCard.astro";
 import { getLangFromUrl } from "../i18n/utils";
 
-
 const locale = getLangFromUrl(Astro.url);
 
-const services = await getCollection("services",({ id }) => {
+const services = await getCollection("services", ({ id }) => {
   return id.includes(locale+"/")
 });
-
-console.log(services[0].filePath)
 
 ---
 <section id="services" class="container-fluid d-flex flex-column gap-3 justify-content-center align-items-center py-5 bg-body-tertiary">
 
   <aside class="col-12 col-lg-8 col-xxl-7 text-center">
-    <span class="text-muted">Our Services</span>
+    <span class="text-secondary">Our Services</span>
     <h3 class="display-6 fw-bold">Services</h3>
     <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta harum ipsum venenatis metus sem veniam eveniet aperiam suscipit.</p>
   </aside>
 
 	<div class="container row g-3 g-lg-4">
     {services.map( item => <div class="col-md-6 col-xl-4 position-relative">
-        <ServiceCard item={item} />
+        <ServiceCard service={item} />
     </div>)}
 	</div>
 

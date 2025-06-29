@@ -11,12 +11,14 @@ export const languages = {
       'nav.about': 'About',
       'nav.services':'Services',
       'nav.contact':'Contact Us',
-      'nav.who':'Who we are?'
+      'nav.who':'Who we are?',
+      "read":"read more"
     },
     fr: {
       'nav.home': 'Accueil',
       'nav.about': 'À propos',
       'nav.contact':'Contactez Nous',
-      'nav.who':'Qui nous sommes?'
+      'nav.who':'Qui nous sommes?',
+      "read":"Lire "
     },
   } as const;

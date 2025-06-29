@@ -1,15 +1,22 @@
 import { defineCollection, z, reference } from 'astro:content';
 import { glob, file } from 'astro/loaders';
-import { languages } from './i18n/ui';
+
+
+
+export const postTags:string[] = [ "event","project","blog","business","tax","accounting"];
 
 const postCollection = defineCollection({
-  loader: glob({ pattern: '**/[^_]*.md', base: "src/data/blog" }),
+  loader: glob({ pattern: '**/[^_]*.md', base: "src/data/posts" }),
   schema: z.object({
     title: z.string(),
-    author: z.string(),
+    description: z.string().max(180),
+    authors: z.array(reference("members")),
     publishedDate: z.coerce.date(),
-    language: z.enum(["en","fr"]),
-    categories: z.enum([ "one","two"]),
+    featuredImg: z.object({
+      url: z.string(),
+      alt: z.string()
+    }),
+    tags: z.array( z.string() ),
     relatedPosts: z.array(reference('blog'))
   })
 });
@@ -47,6 +54,19 @@ const reviewCollection = defineCollection({
     client: z.string(),
     profession: z.string(),
     company: z.string()
+  })
+})
+
+const comments = defineCollection({
+  loader: file("src/data/comments.json"),
+  schema: z.object({
+    id:z.string(),
+    comment: z.string(),
+    pseudo: z.string(),
+    emails: z.string(),
+    post: z.string(),
+    day: z.coerce.date(),
+    replies: z.array(reference('comment'))
   })
 })
 

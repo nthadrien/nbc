@@ -143,3 +143,11 @@ body[data-bs-theme="light"] {
 
 .sun, .moon {display: none;}
 .auto-theme { display: inline ;}
+
+.btn {
+    text-transform: capitalize;
+}
+
+.btn, .dropdown-menu {
+    border-radius: 0 ;
+}
