@@ -37,10 +37,9 @@ const expert = await getEntry(service.data.author);
 
 
     <header id="blog-header" style="min-height: 280px;" class="hero3 p-5 d-flex flex-column justify-content-center align-items-center">
-
-
-        <h1>Services</h1>
-        <p class="text-primary lead">
+    
+        <h1 class="fw-bold display-4">Services</h1>
+        <p class="lead">
             {service.data.description}
         </p>
 
@@ -51,7 +50,7 @@ const expert = await getEntry(service.data.author);
 
 
         <aside class="col-lg-9">
-            <h2 class="text-warning">
+            <h2>
                 {service.data.title}  <i class={`fs-3 ${service.data.icon}`} />
             </h2>
             <p>{remarkPluginFrontmatter.minutesRead} <span class="vr mx-3" /> Expert : {expert.data.name}, {expert.data.role}</p>

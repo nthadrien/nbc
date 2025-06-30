@@ -6,7 +6,7 @@ import TeamCard from "./cards/teamCard.astro";
 const members = await getCollection("members");
 ---
 
-<section id="team" class="container-fluid d-flex flex-column gap-3 justify-content-center align-items-center py-5">
+<section id="team" class="bg-body-tertiary container-fluid d-flex flex-column gap-3 justify-content-center align-items-center py-5">
 
     
 
@@ -21,6 +21,9 @@ const members = await getCollection("members");
         </div>
 
         <div class="col-lg-7 row g-1">
+            {members.map( (member, index) => <div data-iobs="n/a" data-iobs-transition={(index/1.2)+"s"} class="col-6 col-lg-4">
+                <TeamCard item={member} />
+            </div>)}
             {members.map( (member, index) => <div data-iobs="n/a" data-iobs-transition={(index/1.2)+"s"} class="col-6 col-lg-4">
                 <TeamCard item={member} />
             </div>)}

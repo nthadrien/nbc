@@ -1,4 +1,5 @@
 ---
+import { getCollection } from "astro:content";
 import { getLangFromUrl, useTranslations } from "../i18n/utils"
 import Logo from "./logo.astro"
 
@@ -24,36 +25,40 @@ const address = [
     { icon: "bi bi-telephone-fill", to:"+ 237 845-89-097"},
     { icon: "bi bi-mailbox2-flag", to:"P.O BOX 3456-09U"},
 ]
+
+
+const services = await getCollection("services",({ id }) => {
+    return id.includes(locale+"/");
+})
 ---
 
-<footer class="py-4 border-top text-bg-secondary">
-
-    <section class="container mx-auto nav justify-content-between px-3">
-        <Logo />
-
-        <div>
-            {socials.map( it => <a href={it.to} class={`btn btn-outline-light fs-6 ${it.icon} border-light rounded-circle ms-lg-3`} />)}
-        </div>
-    </section>
+<footer class="py-4 text-bg-dark">
 
     <section class="container row g-3 justify-content-between mx-auto pt-4 pb-4 pb-lg-5">
 
-        <aside class="d-none d-md-block col-md-6 col-lg-3 text-center text-lg-start">
+
+        <aside class="col-lg-3">
+            <Logo />
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, ratione fugiat quae, provident dolorum, nulla voluptate rerum eaque itaque vel perferendis repellendus aperiam sunt! Hic nisi non corrupti magnam ad.
+            </p>
+
+            <div>
+                {socials.map( it => <a href={it.to} class={`btn btn-outline-light fs-6 ${it.icon} border-light rounded-circle ms-lg-3`} />)}
+            </div>
+        </aside>
+
+        <aside class="d-none d-md-block col-md-6 col-lg-2 text-center text-lg-start">
             <h5 class="fw-bold">Pages</h5>
             {links.map( item => <a class="d-lg-block mb-1 mx-2 mx-lg-0" href={item.to}> {item.name}</a>)}
         </aside>
 
-        <aside class="d-none d-md-block col-md-6 col-lg-3 text-center text-lg-start">
-            <h5 class="fw-bold">Services</h5>
-            {links.map( item => <a class="d-lg-block mb-1 mx-2 mx-lg-0" href={item.to}> {item.name}</a>)}
-        </aside>
-
-        <aside class="d-none d-md-block col-md-6 col-lg-3 text-center text-md-start">
+        <aside class="d-none d-md-block col-md-6 col-lg-2 text-center text-md-start">
             <h5 class="fw-bold">Useful Links</h5>
             {links.map( item => <a class="d-lg-block mb-1 mx-2 mx-lg-0" href={item.to}> {item.name}</a>)}
         </aside>
 
-        <aside class="col-lg-3 text-center text-lg-end">
+        <aside class="col-lg-2 text-lg-end">
             <h5 class="fw-bold">Address</h5>
             <p class="mb-1">Mountain View</p>
             <p class="mb-1">California, United States</p>

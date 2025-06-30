@@ -9,8 +9,8 @@ export const languages = {
     en: {
       'nav.home': 'Home',
       'nav.about': 'About',
-      'nav.services':'Services',
       'nav.contact':'Contact Us',
+      'nav.news':"News",
       'nav.who':'Who we are?',
       "read":"read more"
     },
@@ -18,7 +18,8 @@ export const languages = {
       'nav.home': 'Accueil',
       'nav.about': 'À propos',
       'nav.contact':'Contactez Nous',
+      'nav.news':"Actualités",
       'nav.who':'Qui nous sommes?',
-      "read":"Lire "
+      "read":"Lire"
     },
   } as const;

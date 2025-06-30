@@ -6,17 +6,16 @@ import 'bootstrap/js/dist/button';
 import 'bootstrap/js/dist/collapse';
 import 'bootstrap/js/dist/dropdown';
 import 'bootstrap/js/dist/modal';
-// import 'bootstrap/js/dist/offcanvas';
+import 'bootstrap/js/dist/offcanvas';
 // import 'bootstrap/js/dist/popover';
 // import 'bootstrap/js/dist/scrollspy';
-// import 'bootstrap/js/dist/tab';
+import 'bootstrap/js/dist/tab';
 // import 'bootstrap/js/dist/toast';
 // import 'bootstrap/js/dist/tooltip';
 
 
-
-
 const animatedElements = document.querySelectorAll('[data-iobs]');
+
 
 if (animatedElements.length > 0) {
     const iobsObserverOptions = {
@@ -36,12 +35,13 @@ if (animatedElements.length > 0) {
                 // Apply custom transition duration before adding the 'show' class
                 if (transitionDuration) targetElement.style.transitionDuration = transitionDuration;
                 targetElement.classList.add('show');
-            } else {
+            } 
+            // else {
                 // Optional: If you want elements to disappear when they scroll out of view (e.g., upwards)
                 // targetElement.classList.remove('show');
                 // Reset transition duration to default CSS one or empty string
                 // targetElement.style.transitionDuration = '';
-            }
+            // }
         });
     };
 

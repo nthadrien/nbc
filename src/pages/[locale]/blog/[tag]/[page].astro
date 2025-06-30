@@ -10,7 +10,6 @@ import { postTags } from "../../../../content.config";
 import CategoryTags from "../../../../components/forms/categoryTags.astro";
 import Pagination from "../../../../components/utils/pagination.astro";
 import PostContactBtn from "../../../../components/forms/postContactBtn.astro";
-import RecentProjects from "../../../../components/recentProjects.astro";
 
 
 export const getStaticPaths = ( async ({ paginate }) => {
@@ -49,7 +48,6 @@ const { pageSize , tag } = Astro.params as Params;
 
             <aside class="col-md-4 col-xl-3">
                 <CategoryTags tags={postTags} />
-                <RecentProjects />
                 <PostContactBtn />
             </aside>
 

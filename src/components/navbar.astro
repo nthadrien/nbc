@@ -3,107 +3,199 @@ import { getCollection } from "astro:content";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import Logo from "./logo.astro";
 import LangChanger from "./utils/langChanger.astro";
-
+import BlogCard from "./cards/blogCard.astro";
 
 const locale = getLangFromUrl(Astro.url);
 const t = useTranslations(locale);
+const today = new Date().getTime(); 
 
-const services = await getCollection("services",({ id }) => {
-  return id.startsWith(locale+'/');
+
+const services = await getCollection("services", ({ id }) => {
+    return id.startsWith(locale + "/");
 });
 
+const recentPosts = await getCollection("posts", ( { id,  data}) => {
+    const dat = new Date(data.publishedDate).getTime();
+    return Math.floor( today - dat ) < 5259600000 && id.includes(locale+"/");
+});
+
+const showPosts = recentPosts.slice(0,2);
+
+const blogs = [
+    { name : "taxes" , icon:"me-2 bi bi-tag " , link:`/nbc/${locale}/blog/1`},
+    { name : "astuces" , icon:"me-2 bi bi-info" , link:`/nbc/${locale}/blog/1`},
+    { name : "articles" , icon:"me-2 bi bi-newspaper " , link:`/nbc/${locale}/blog/1`}
+];
+
+const resources = [
+    { name : "Communaute" , icon:"me-2 bi bi-people " , link:`/nbc/${locale}/blog/1`},
+    { name : "Politiques de Privacy" , icon:"me-2 bi bi-people " , link:`/nbc/${locale}/blog/1`},
+    { name : "opportunites de .." , icon:"me-2 bi bi-node-plus " , link:`/nbc/${locale}/blog/1`},
+    { name : "temoinages" , icon:"me-2 bi bi-people " , link:`/nbc/${locale}/blog/1`}
+];
+
+const proj = [
+    { name : "projet typ-1" , icon:"me-2 bi bi-archive" , link:`/nbc/${locale}/blog/1`}
+];
 ---
 
 <header class="container-fluid border-bottom">
-
-    <section class="container mx-auto d-none d-md-flex justify-content-between align-itms-center px-2 py-1">
-
+    <section
+        class="container mx-auto d-none d-md-flex justify-content-between align-itms-center px-2 py-1"
+    >
         <small>
             <i class="bi bi-phone"></i>
             Book a consultation today example@mailbox.com
         </small>
 
-
-        <small>
-            EN | FR
-        </small>
-
+        <small> EN | FR </small>
     </section>
-
 </header>
 
-<nav
-    class="container-fluid navbar navbar-expand-lg" aria-label="website main navbar"
->
-    <section class="container mx-auto">
+<nav class="container-fluid navbar navbar-expand-lg p-3" aria-label="Offcanvas navbar large">
+
+    <section class="container mx-auto nav gap-2 justify-content-between align-items-center">
 
         <Logo />
 
-        <button
-            class="navbar-toggler border-0 ms-auto"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#wbsNavbar"
-            aria-controls="wbsNavbar"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
+        <aside
+            class="offcanvas offcanvas-end"
+            tabindex="-1"
+            id="offcanvasNavMenu"
+            aria-labelledby="offcanvasNavMenuLabel"
         >
-            <span class="navbar-toggler-icon"></span>
-        </button>       
 
-        <ul class="collapse navbar-collapse navbar-nav justify-content-lg-between gap-2 p-1" id="wbsNavbar">
+            <section class="offcanvas-header">
+                <Logo /> 
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" />
+            </section>
 
 
-            <li class="d-flex flex-column flex-lg-row mx-auto">
+            <section class="offcanvas-body">
 
-                <a class="nav-link active" aria-current="page" href={`/nbc/${locale}/`}>{t('nav.home')}</a>
+                <ul class="navbar-nav justify-content-end justify-content-lg-center flex-grow-1 pe-3">
 
-                <div class=" dropdown">
-                    <a
-                        class="nav-link dropdown-toggle"
-                        href="#"
-                        data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        {t('nav.about')}
+                    <a class="nav-link active" aria-current="page" href={`/nbc/${locale}`}>
+                        {t("nav.home")}
                     </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href={`/nbc/${locale}/about-us#`}>{t('nav.who')}</a></li>
-                        <li>
-                            <a class="dropdown-item" href={`/nbc/${locale}/about-us#team`}>Team</a>
-                        </li>
-                        <li>
+                    
+                   <div class="dropdown">
+                        <a
+                            class="nav-link dropdown-toggle"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                        >
+                            {t("nav.about")}
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <a class="dropdown-item" href={`/nbc/${locale}/about-us#`}>{t("nav.who")}</a>
+                            <a  class="dropdown-item"  href={`/nbc/${locale}/about-us#team`}>Team</a>
                             <a class="dropdown-item" href={`/nbc/${locale}/about-us#faq`}>faq</a>
-                        </li>
-                    </ul>
-                </div>
+                        </ul>
+                    
+                    </div>
 
-
-                <div class=" dropdown">
                     <a
                         class="nav-link dropdown-toggle"
                         href="#"
+                        role="button"
                         data-bs-toggle="dropdown"
-                        aria-expanded="false">
-                        {t('nav.services')}
+                        aria-expanded="false"
+                    >
+                        {t("nav.news")}
                     </a>
-                    <div class="dropdown-menu end-50 translate-middle-x">
-                        <ul style="min-width: 70vw;" class="list-unstyled row row-cols-1 row-cols-lg-2 g-2">
-                            {services.map( service => <li>
-                                <a class="dropdown-item" href="#">{service.data.title}</a>
-                            </li>)}
-                        </ul>
+
+                    <aside class="dropdown-menu mega-menu">
+
+                        <section class="bg-body container mx-auto row p-3">
+
+                            <div class="col-lg-3">
+                                <h6 class="fw-bold text-primary mb-3">Projets</h6>
+                                {proj.map( projet => <a href={projet.link} class="mb-3">{projet.name}</a>)}
+                            </div>
+
+                            <div class="col-lg-3">
+                                <h6 class="fw-bold text-primary mb-3">Blog</h6>
+                                {blogs.map( blog => <a href={blog.link} class="d-block mb-3">
+                                    <i class={blog.icon}/> {blog.name}
+                                </a>)}
+                                <h6 class="fw-bold text-primary mb-3">Resouces</h6>
+                                {resources.map( resource => <a href={resource.link} class="d-block mb-3">
+                                    <i class={resource.icon}/> {resource.name}
+                                </a>)}
+                            </div>
+
+                            <div class="col-lg-6 d-none d-lg-flex flex-column gap-2">
+                                <h6 class="fw-bold text-primary">Nouveaute</h6>
+                                <div style="font-size: smaller;" class="d-flex gap-1">
+                                    {showPosts.map( item => <a href={`/nbc/${locale}/blog/${item.data.title}`} class="col-md-6 position-relative border-end p-2">
+                                        <p>{item.data.tags.map( tag => <small class="btn btn-sm btn-primary me-1">{tag}</small>)}</p>
+                                        <p class="fw-semibold"> {item.data.title} </p>
+                                        <p>{item.data.description}</p>
+                                    </a>)}
+                                </div>
+                            </div>
+
+                        </section>
+
+                    </aside>
+
+                    <a
+                        class="nav-link dropdown-toggle"
+                        href="#"
+                        role="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                    >
+                        Services
+                    </a>
+
+                    <div class="dropdown-menu mega-menu">
+
+                       <section class="bg-body container mx-auto nav gap-3 p-3">
+                            <img class="d-none d-lg-block col-3 bg-gradient rounded-2" src="/nbc/imgs/table.avif" alt="">
+                            <div class="col-lg-9 row row-cols-1 row-cols-lg-2 g-3">
+                                {services.map( service => <a class="col d-flex align-items-start gap-2 gap-lg-3" href={`/nbc/${locale}/services/${service.data.title}`} >
+                                    <i class={`bg-body-tertiary shadow-sm btn  ${service.data.icon}`} /> 
+                                    <b>{service.data.title} </b>
+                                </a>)}
+                            </div>
+                       </section>
+
                     </div>
-                </div>
 
-                <a class="nav-link active" aria-current="page" href={`/nbc/${locale}/blog/1`}>Blog</a>
-                <a class="nav-link active" aria-current="page" href={`/nbc/${locale}/blog`}>Projets</a>
+                </ul>
 
-            </li>
-            
-            <button data-bs-toggle="modal" data-bs-target="#contactUs" class="btn btn-primary">{t('nav.contact')}</button>
-            
-        </ul>
+                <input
+                    type="button"
+                    data-bs-toggle="modal"
+                    data-bs-target="#contactUs"
+                    class="btn btn-primary"
+                    value={t("nav.contact")} 
+                />
 
-        <div class="ms-2"><LangChanger /></div>
+            </section>
+
+        </aside>
+
+        <aside class="d-flex gap-2">
+
+            <button
+                class="navbar-toggler border-0"
+                type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasNavMenu"
+                aria-controls="offcanvasNavMenu"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <LangChanger />
+        </aside>
+
     </section>
+
 </nav>
