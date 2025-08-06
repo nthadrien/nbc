@@ -1,5 +1,5 @@
 ---
-title: Business Plan  
+title: Etude et gestion des projets  
 author: "1"
 description: Un document détaillé qui décrit la vision, les objectifs
 date: 2020-10-14

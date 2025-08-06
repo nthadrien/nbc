@@ -21,49 +21,45 @@ const socials = [
 ]
 
 const address = [
-    { icon: "bi bi-geo-alt-fill", to:"Cameroun , Yaounde : Marche etoudi"},
-    { icon: "bi bi-telephone-fill", to:"+ 237 845-89-097"},
-    { icon: "bi bi-mailbox2-flag", to:"P.O BOX 3456-09U"},
+    { icon: "bi bi-telephone-fill", to:"+237 667 316 329"},
+    { icon: "bi bi-google", to:"ntibusinessconsulting@gmail.com"},
 ]
 
 
 const services = await getCollection("services",({ id }) => {
-    return id.includes(locale+"/");
+    return id.startsWith(locale+"/");
 })
 ---
 
-<footer class="py-4 text-bg-dark">
+<footer class="py-4 text-bg-black">
 
     <section class="container row g-3 justify-content-between mx-auto pt-4 pb-4 pb-lg-5">
 
-
-        <aside class="col-lg-3">
+        <aside class="col-lg-5">
             <Logo />
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, ratione fugiat quae, provident dolorum, nulla voluptate rerum eaque itaque vel perferendis repellendus aperiam sunt! Hic nisi non corrupti magnam ad.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, ratione fugiat quae. 
             </p>
-
-            <div>
-                {socials.map( it => <a href={it.to} class={`btn btn-outline-light fs-6 ${it.icon} border-light rounded-circle ms-lg-3`} />)}
+            {address.map( item => <span class="d-block mb-1">
+                <i class={`${item.icon} me-2`} />
+                {item.to} 
+            </span>)}
+            <div class="mt-3">
+                {socials.map( it => <a href={it.to} class={`btn btn-outline-light rounded-circle fs-6 ${it.icon} me-1`} />)}
             </div>
+        </aside>
+
+        <aside class="d-none d-md-block col-md-6 col-lg-3 text-center text-md-start">
+            <h5 class="fw-bold">Services</h5>
+            {services.map( item => <a class="d-lg-block mb-1 mx-2 mx-lg-0" href={item.id}> 
+                <i class="bi bi-check2-circle me-1" />
+                {item.data.title}
+            </a>)}
         </aside>
 
         <aside class="d-none d-md-block col-md-6 col-lg-2 text-center text-lg-start">
             <h5 class="fw-bold">Pages</h5>
             {links.map( item => <a class="d-lg-block mb-1 mx-2 mx-lg-0" href={item.to}> {item.name}</a>)}
-        </aside>
-
-        <aside class="d-none d-md-block col-md-6 col-lg-2 text-center text-md-start">
-            <h5 class="fw-bold">Useful Links</h5>
-            {links.map( item => <a class="d-lg-block mb-1 mx-2 mx-lg-0" href={item.to}> {item.name}</a>)}
-        </aside>
-
-        <aside class="col-lg-2 text-lg-end">
-            <h5 class="fw-bold">Address</h5>
-            <p class="mb-1">Mountain View</p>
-            <p class="mb-1">California, United States</p>
-            <p class="mb-1">Tel: +1 123-456-7890</p>
-            <p class="mb-0"><a href="">hello@yourdomain.com</a></p>
         </aside>
 
         <div class="border-top d-lg-none"></div>

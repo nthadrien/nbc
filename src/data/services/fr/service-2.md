@@ -1,5 +1,5 @@
 ---
-title: L'Audit Comptable, Financier et Organisationnel  
+title: Fundraising
 author: "1"
 description: Un examen approfondi des états financiers, des processus comptables
 date: 2020-10-14
