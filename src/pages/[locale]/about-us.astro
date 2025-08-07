@@ -8,12 +8,19 @@ import Team from "../../components/team.astro";
 import Faq from "../../components/faq.astro";
 import ClientReview from "../../components/clientReview.astro";
 import Steps from "../../components/steps.astro";
+import { getLangFromUrl, useTranslations } from "../../i18n/utils";
 
 export const getStaticPaths = (() => {
 	return Object.keys(languages).map( locale => ({ 
 		params : { locale }
 	}));
 }) satisfies GetStaticPaths;
+
+type itEnum = "one"|"two"|"three"|"four";
+const buztypes: itEnum[] = ["one","two","three","four"];
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
 
 ---
 
@@ -23,33 +30,39 @@ export const getStaticPaths = (() => {
 
     <section class="py-5">
         <div class="container row gx-4 align-items-center mx-auto">
-            <aside class="col-md-6">
+            <aside class="d-none d-md-block col-md-6">
                 <img data-iobs="none" width="100%" class="object-fit-cover rounded-3" src="/nbc/imgs/hero3.avif">
             </aside>
             <aside class="col-md-6">
                 <div data-iobs="left" data-iobs-transition="1s" class="ms-md-2 ms-lg-5 mt-5 mt-md-0">
-                    <span class="text-muted">Our Story</span>
-                    <h2 class="display-5 fw-bold">About Us</h2>
-                    <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                    <p class="lead">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut.</p>
+                    <span class="text-muted">{t('nav.who')}</span>
+                    <h2 class="display-5 fw-bold">{t('nav.about')}</h2>
+                    <p class="lead">{t('about.story')}</p>
+                    <p>{t('about.story1')}.</p>
                     <a class="btn btn-primary" href="#">Learn more</a>
                 </div>
             </aside>
         </div>
     </section>
 
-    <section class="py-5">
+    <section id="#vision" class="py-5">
         <div class="container row justify-content-between mx-auto">
             <div class="col-md-6">
-                <h2 class="display-5 fw-bold">We provide expert advice for all size businesses.</h2>
-                <p class="mt-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu rhoncus nulla. Aenean elementum, consectetur adipiscing elit ut rhoncus.</p>
+                <h2 class="display-6 fw-bold">
+                    <!-- We provide expert advice for all size businesses. <br/> -->
+                    {t('about.vision.catch')}</h2> 
+                <p class="mt-3">{t('about.vision')}</p>
             </div>
-            <div class="col-md-6">
-                <h6 class="mb-3 text-primary">Type of Business One</h6>
-                <p class="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu rhoncus nulla. Aenean elementum.</p>
-                <h6 class="mb-3 text-primary">Type of Business Two</h6>
-                <p class="mb-3">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut eu rhoncus nulla. Aenean elementum.</p>
-            </div>
+            <ul class="col-md-6 list-unstyled row g-3">
+                {buztypes.map( (item:itEnum) => <li class="col-sm-6">
+                    <button class="nav-link fw-bold fs-6" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${item}-vision`} aria-expanded="false" aria-controls="collapse-vision">
+                        <i class="bi bi-check-square" /> {t(`about.biz.${item}`)}
+                    </button>
+                    <div class="collapse collapse-vertical ps-4 border-start border-secondary" id={`collapse${item}-vision`}>
+                        {t(`about.biz.${item}.decs`)}
+                    </div>
+                </li>)}
+            </ul>
         </div>
     </section>
 

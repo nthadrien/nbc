@@ -1,3 +1,14 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+
+type itEnum = "one"|"two"|"three"|"four";
+const buztypes: itEnum[] = ["one","two","three","four"];
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
+
+---
+
 <section id="faq" class="container-fluid d-flex flex-column gap-3 justify-content-center align-items-center py-5">
 
     <aside class="col-12 col-lg-8 col-xxl-7 text-center">
