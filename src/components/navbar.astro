@@ -6,6 +6,7 @@ import LangChanger from "./utils/langChanger.astro";
 import BlogCard from "./cards/blogCard.astro";
 
 const locale = getLangFromUrl(Astro.url);
+const { pathname } = Astro.url;
 const t = useTranslations(locale);
 const today = new Date().getTime(); 
 
@@ -41,47 +42,47 @@ const proj = [
 
 <header class="container-fluid border-bottom">
     <section
-        class="container mx-auto d-none d-md-flex justify-content-between align-itms-center px-2 py-1"
+        data-bs-toggle="modal" data-bs-target="#contactUs"
+        class="container mx-auto d-flex justify-content-between align-itms-center px-2 py-1"
     >
-        <small>
+        <btn class="btn btn-sm">
             <i class="bi bi-phone"></i>
-            Book a consultation today example@mailbox.com
-        </small>
+            Book a consultation
+        </btn>
 
         <small> EN | FR </small>
     </section>
 </header>
 
-<nav class="container-fluid navbar navbar-expand-lg p-3" aria-label="Offcanvas navbar large">
+<nav class="container-fluid navbar navbar-dark navbar-expand-lg p-3 position-absolute" aria-label="Offcanvas navbar large">
 
     <section class="container mx-auto nav gap-2 justify-content-between align-items-center">
 
         <Logo />
 
         <aside
-            class="offcanvas offcanvas-end"
+            class="offcanvas offcanvas-end text-bg-dark"
             tabindex="-1"
             id="offcanvasNavMenu"
             aria-labelledby="offcanvasNavMenuLabel"
         >
 
             <section class="offcanvas-header">
-                <Logo /> 
                 <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" />
             </section>
 
 
             <section class="offcanvas-body">
 
-                <ul class="navbar-nav justify-content-end justify-content-lg-center flex-grow-1 pe-3">
+                <ul class="navbar-nav flex-column flex-lg-row gap-2 justify-content-end justify-content-lg-center flex-grow-1 pe-3">
 
-                    <a class="nav-link active" aria-current="page" href={`/nbc/${locale}`}>
+                    <a class={`nav-link ${pathname.endsWith("fr") || pathname.endsWith("en") ? "active":'' }`} aria-current="page" href={`/nbc/${locale}`}>
                         {t("nav.home")}
                     </a>
                     
                    <div class="dropdown">
                         <a
-                            class="nav-link dropdown-toggle"
+                            class={`nav-link dropdown-toggle ${pathname.search("about-us") > 0 ? "active":'' }`}
                             href="#"
                             role="button"
                             data-bs-toggle="dropdown"
@@ -99,7 +100,7 @@ const proj = [
                     </div>
 
                     <a
-                        class="nav-link dropdown-toggle"
+                        class={`nav-link dropdown-toggle ${pathname.includes("/blog") || pathname.includes("/project") ? "active":'' }`}
                         href="#"
                         role="button"
                         data-bs-toggle="dropdown"
@@ -143,28 +144,23 @@ const proj = [
 
                     </aside>
 
-                    <a
-                        class="nav-link dropdown-toggle"
+                    <div class="dropdown">
+                        <a
+                        class={`nav-link dropdown-toggle ${pathname.search("/services") > 0 ? "active":'' }`}
                         href="#"
                         role="button"
                         data-bs-toggle="dropdown"
                         aria-expanded="false"
-                    >
-                        Services
-                    </a>
+                        >
+                            Services
+                        </a>
 
-                    <div class="dropdown-menu mega-menu">
-
-                       <section class="bg-body container mx-auto nav gap-3 p-3">
-                            <img class="d-none d-lg-block col-3 bg-gradient rounded-2" src="/nbc/imgs/table.avif" alt="">
-                            <div class="col-lg-9 row row-cols-1 row-cols-lg-2 g-3">
-                                {services.map( service => <a class="col d-flex align-items-start gap-2 gap-lg-3" href={`/nbc/${locale}/services/${service.data.title}`} >
-                                    <i class={`bg-body-tertiary shadow-sm btn  ${service.data.icon}`} /> 
-                                    <b>{service.data.title} </b>
-                                </a>)}
-                            </div>
-                       </section>
-
+                        <div class="dropdown-menu dropdown-menu-end">
+                            {services.map( service => <a class="dropdown-item" href={`/nbc/${locale}/services/${service.data.title}`} >
+                                <i class={`${service.data.icon} me-1`} /> 
+                                {service.data.title}
+                            </a>)}
+                        </div>
                     </div>
 
                 </ul>

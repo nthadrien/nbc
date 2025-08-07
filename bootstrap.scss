@@ -155,8 +155,14 @@ body[data-bs-theme="light"] {
     color: whitesmoke;
 }
 
-.dropdown-menu {
-    transition: display 0.25s ease;
+.dropdown-menu.show {
+    border: 0;
+    animation: drop-anim 0.4s ease-out 0s 1 forwards;
+}
+
+@keyframes drop-anim {
+    0% {opacity: 0; transform: translateY(10%);}
+    100% {opacity: 1; transform: translateY(0);}
 }
 
 .mega-menu {
