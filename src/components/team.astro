@@ -2,28 +2,27 @@
 
 import { getCollection } from "astro:content";
 import TeamCard from "./cards/teamCard.astro";
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
 const members = await getCollection("members");
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
 ---
 
 <section id="team" class="bg-body-tertiary container-fluid d-flex flex-column gap-3 justify-content-center align-items-center py-5">
-
-    
 
 	<div class="container row g-2">
 
         <div class="col-lg-5">
             <div class="ms-lg-5 mb-5">
-                <span class="text-info">Our Team</span>
-                <h2 class="display-6 fw-bold mb-3 mb-xl-5">Meet the Team</h2>
-                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta harum ipsum venenatis metus sem veniam eveniet aperiam suscipit.</p>
+                <span class="text-info">{t('team.def')}</span>
+                <h2 class="display-6 fw-bold mb-3 mb-xl-5">{t('team.meet')}</h2>
+                <p class="lead">{t('team.desc')}</p>
             </div>
         </div>
 
         <div class="col-lg-7 row g-1">
-            {members.map( (member, index) => <div data-iobs="n/a" data-iobs-transition={(index/1.2)+"s"} class="col-6 col-lg-4">
-                <TeamCard item={member} />
-            </div>)}
             {members.map( (member, index) => <div data-iobs="n/a" data-iobs-transition={(index/1.2)+"s"} class="col-6 col-lg-4">
                 <TeamCard item={member} />
             </div>)}

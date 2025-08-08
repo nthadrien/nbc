@@ -10,8 +10,7 @@ const links = [
     {name: t('nav.home'), to:"/#"},
     {name:"Blogs", to:"/#"},
     {name:"F.A.Q", to:"/about#faq"},
-    {name: t('nav.about'), to:"/about#us"},
-    {name: t('nav.contact'), to:"/#contacts"},
+    {name: t('nav.who'), to:"/about-us#who"},
 ]
 
 const socials = [
@@ -35,11 +34,9 @@ const services = await getCollection("services",({ id }) => {
 
     <section class="container row g-3 justify-content-between mx-auto pt-4 pb-4 pb-lg-5">
 
-        <aside class="col-lg-5">
+        <aside class="col-lg-5 px-4 px-md-0">
             <Logo />
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio, ratione fugiat quae. 
-            </p>
+            <p class="my-1">{t('slogan')}</p>
             {address.map( item => <span class="d-block mb-1">
                 <i class={`${item.icon} me-2`} />
                 {item.to} 
@@ -66,10 +63,10 @@ const services = await getCollection("services",({ id }) => {
 
     </section>
 
-    <small class="container nav justify-content-lg-between p-2 pt-4 small mx-auto">
+    <div style="font-size: x-small;" class="container nav justify-content-center justify-content-lg-between p-2 pt-4 mx-auto">
         <span>
-            &copy; { new Date().getFullYear()} Nti business consulting. All rights reserved.
+            &copy; { new Date().getFullYear()} Nti.BC. All rights reserved.
         </span>
-        <a href="#">Proudly built & designd by nzenda-group</a>
-    </small>
+        <a href="#">terms & conditions <span class="vr mx-1"/> privacy policy</a>
+    </div>
 </footer>

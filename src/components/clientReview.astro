@@ -1,14 +1,17 @@
 ---
-import TestimonyCard from "./cards/testimonyCard.astro"
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
+import TestimonyCard from "./cards/testimonyCard.astro";
 
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
 
 ---
 
-<section class="container-fluid d-flex flex-column gap-3 justify-content-center align-items-center py-5">
+<section id="testimonials" class="container-fluid d-flex flex-column gap-3 justify-content-center align-items-center py-5">
 
     <div class="col-12 col-lg-8 col-xxl-7 text-center">
-        <h3 class="display-6 fw-bold">Clients</h3>
-        <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta harum ipsum venenatis metus sem veniam eveniet aperiam suscipit.</p>
+        <h3 class="display-6 fw-bold">{t('test.client')}</h3>
+        <p class="lead text-primary">{t('test.desc')}</p>
     </div>
 
     <aside class="container row g-3 mx-auto">

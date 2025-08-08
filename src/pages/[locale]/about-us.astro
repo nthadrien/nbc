@@ -35,11 +35,14 @@ const t = useTranslations(locale);
             </aside>
             <aside class="col-md-6">
                 <div data-iobs="left" data-iobs-transition="1s" class="ms-md-2 ms-lg-5 mt-5 mt-md-0">
-                    <span class="text-muted">{t('nav.who')}</span>
+                    <span class="text-primary">{t('nav.who')}</span>
                     <h2 class="display-5 fw-bold">{t('nav.about')}</h2>
                     <p class="lead">{t('about.story')}</p>
                     <p>{t('about.story1')}.</p>
-                    <a class="btn btn-primary" href="#">Learn more</a>
+                    <!-- <a class="btn btn-primary" href="#testimonials">{t('read')}</a> -->
+                    <a class="icon-link icon-link-hover text-capitalize fw-semibold"  href="#testimonials">
+                        {t('read')} <i class="bi bi-arrow-right ms-2"></i>
+                    </a>
                 </div>
             </aside>
         </div>
@@ -55,10 +58,10 @@ const t = useTranslations(locale);
             </div>
             <ul class="col-md-6 list-unstyled row g-3">
                 {buztypes.map( (item:itEnum) => <li class="col-sm-6">
-                    <button class="nav-link fw-bold fs-6" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${item}-vision`} aria-expanded="false" aria-controls="collapse-vision">
+                    <button class="nav-link fw-bold text-info fs-6" type="button" data-bs-toggle="collapse" data-bs-target={`#collapse${item}-vision`} aria-expanded="false" aria-controls="collapse-vision">
                         <i class="bi bi-check-square" /> {t(`about.biz.${item}`)}
                     </button>
-                    <div class="collapse collapse-vertical ps-4 border-start border-secondary" id={`collapse${item}-vision`}>
+                    <div class="collapse collapse-vertical ps-4 border-start border-info" id={`collapse${item}-vision`}>
                         {t(`about.biz.${item}.decs`)}
                     </div>
                 </li>)}
