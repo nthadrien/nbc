@@ -1,15 +1,11 @@
 ---
-import { map } from "astro:schema"
+import { getLangFromUrl, useTranslations } from "../i18n/utils";
 
+type itEnum = "one"|"two"|"three";
+const featList: itEnum[] = ["one","two","three"];
 
-
-
-const features = [
-	{name:"Precision", summary: "it means what it meant bro.."}, 
-	{name:"Accuracy", summary:"it means what it meant bro.."}, 
-	{name:"Compliance", summary:"it means what it meant bro.."}, 
-	{name: "expertise", summary:"it means what it meant bro.."}
-]
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
 ---
 
 <section class="py-5">
@@ -24,25 +20,21 @@ const features = [
 
 		<div class="col-md-6">
 
-			<span class="text-info">Why choose us</span>
-			<h2 class="display-6 fw-bold">Trusted Partnership, Proven Results</h2>
-			<p class="text-muted mb-3 lead">
-				Our dedicated team of professionals ensures accurate financial reporting, 
-				regulatory compliance, and strategic guidance customized for your specific needs. 
-			</p>
+			<span>{t('feat.why')}</span>
+			<h2 class="display-6 fw-bold">{t("feat.desc")}</h2>
 
 			<ul class="list-unstyled">
-				{features.map( feature => <li class=" d-flex gap-3 mb-2">	
-					<i class="fs-4 bi bi-check-circle-fill text-primary" />
+				{featList.map( feature => <li class=" d-flex gap-3 mb-2">	
+					<i class="fs-4 bi bi-check-circle-fill text-info" />
 					<div>
-						<span class="">{feature.name}</span> 
-						<br/> {feature.summary}
+						<strong class="text-info">{t(`feat.${feature}`)}</strong> 
+						<br/> {t(`feat.${feature}.desc`)}
 					</div>
 				</li>)}
 			</ul>
 
-			<a href="/nbc/fr/about-us" class="">
-				about us <i class="bi bi-arrow-right" />
+			<a href="/nbc/fr/about-us#testimony" class="">
+				{t('test.client')} <i class="bi bi-arrow-right" />
 			</a>
 
 		</div>

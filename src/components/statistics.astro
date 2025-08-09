@@ -1,45 +1,37 @@
-<section style="max-width: 968px;" class="container-sm">
+---
+import { getLangFromUrl } from "../i18n/utils"
 
-    <div class="row row-cols-2 row-cols-lg-4  bg-body text-center shadow rounded-3">
-        <div class="col p-3">
-            <h4 class="display-6 fw-bold text-primary">50k+</h4>
-            <p>Statisfied customers</p>
-        </div>
-        <div class="col p-3">
-            <h4 class="display-6 fw-bold text-primary">5+</h4>
-            <p>Years of experience</p>
-        </div>
-        <div class="col p-3 text-bg-primary">
-            <h4 class="display-6 fw-bold">3+</h4>
-            <p>Experts</p>
-        </div>
-        <div class="col p-3">
-            <h4 class="display-6 fw-bold text-info">200</h4>
-            <p>Projet Followed</p>
-        </div>
-    </div>
+const locale = getLangFromUrl(Astro.url);
+const loc = locale == "en";
 
-</section>
+---
 
 <section class="py-5">
-    <div class="container">
-        <div class="row align-items-center">
-            <div data-iobs="down" data-iobs-transition="0.5s" class="col-lg-2">
-                <h2 class="display-5 fw-bold">100+</h2>
-                <div>
-                    Projets
-                </div>
-            </div>
-            <div data-iobs="down" data-iobs-transition="1s"  class="col-lg-8 my-3 my-lg-0 text-center">
-                <h2 class="display-5 fw-bold mb-2">The Possibilities Are Endless</h2>
-                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, non recusandae nulla rerum minus</p>
-            </div>
-            <div data-iobs="down" data-iobs-transition="1.2s"  class="col-lg-2 text-lg-end">
-                <h2 class="display-5 fw-bold">100+</h2>
-                <div>
-                    Etudes de feasibility
-                </div>
-            </div>
+    <div style="max-width: 768px;" data-iobs="down" data-iobs-transition="1s"  class="container mx-auto text-center">
+        <h2 class="display-5 fw-bold mb-2">The Possibilities Are Endless</h2>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, non recusandae nulla rerum minus</p>
+    </div>
+</section>
+
+<section style="max-width: 768px;" class="container-sm">
+
+    <div class="row row-cols-2 row-cols-lg-4  bg-body text-center display-5">
+        <div class="col p-3 border-end">
+            <span class="fw-bold fs-2 text-primary" data-iobs-value="1" data-iobs-final="53">0</span> + 
+            <br/>{loc ? "Statisfied customers":"Clients satisfaits"}</p>
+        </div>
+        <div class="col p-3">
+            <span class="fw-bold fs-2 text-primary" data-iobs-value="1" data-iobs-final="5">0</span> + 
+            <p>{ loc ? "Years of experience":"Années d'expérience"}</p>
+        </div>
+        <div class="col p-3 text-bg-primary border-end">
+            <span class="fw-bold fs-2" data-iobs-value="1" data-iobs-final="3">0</span> + 
+            <br/>Experts
+        </div>
+        <div class="col p-3">
+            <span class="fw-bold fs-2 text-primary" data-iobs-value="1" data-iobs-final="200">0</span> + 
+            <br/> {loc ? "Projets Followed" :"Projets suivi"}
         </div>
     </div>
+
 </section>

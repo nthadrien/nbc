@@ -15,15 +15,17 @@ import 'bootstrap/js/dist/tab';
 
 
 const animatedElements = document.querySelectorAll('[data-iobs]');
+const statsIncrementElements = document.querySelectorAll('[data-iobs-value]');
 
+
+const iobsObserverOptions = {
+    root: null, // Use the viewport as the root
+    rootMargin: '0px',
+    threshold: 0.3 // Trigger when 10% of the element is visible
+};
 
 if (animatedElements.length > 0) {
-    const iobsObserverOptions = {
-        root: null, // Use the viewport as the root
-        rootMargin: '0px',
-        threshold: 0.3 // Trigger when 10% of the element is visible
-    };
-
+   
     const iobsObserverCallback = (entries, observer) => {
         entries.forEach(entry => {
             const targetElement = entry.target;
@@ -51,6 +53,28 @@ if (animatedElements.length > 0) {
     animatedElements.forEach(element => {
         iobsObserver.observe(element);
     });
-} else {
-    console.warn('No elements with data-iobs="left" found to observe.');
+} 
+
+if ( statsIncrementElements.length > 0 ) {
+    const iobsIncreaseObserverCallback = (entries, observer) => {
+        entries.forEach(entry => {
+            const targetElement = entry.target;
+            const intialValue = parseInt(targetElement.dataset.iobsValue) ?? 0;
+            const finalValue = parseInt(targetElement.dataset.iobsFinal) ?? 0 ;
+            const diff = finalValue - intialValue ?? 0;
+
+            if (entry.isIntersecting && diff > 0 ) {
+                for( let i = 0 ; i <= diff ; i++ ) {
+                    setTimeout( () => {
+                        targetElement.innerHTML = intialValue + i;
+                    }, i*20);
+                }
+                observer.unobserve(targetElement);
+            }
+        });
+    };
+
+    const iobsIncreaseObserver = new IntersectionObserver(iobsIncreaseObserverCallback, iobsObserverOptions);
+    // Observe each element with data-iobs="left"
+    statsIncrementElements.forEach(element => {iobsIncreaseObserver.observe(element);});
 }

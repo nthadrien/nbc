@@ -1,12 +1,17 @@
-<header id="page-header" class="hero1 py-3 px-3">
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils"
 
-	<section  class="container nav align-items-center page-hero">
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
+---
+<header id="page-hero" class="hero1 py-5 hero3 d-flex justify-content-center align-items-center">
 
-        <div  class="col-lg-6 my-4 d-flex flex-column ">
-            <div class="pe-lg-3">
-                <h1 class="display-2 fw-bold mb-4">Bring Your Ideas to Life with <span class="text-primary">Bootstrap</span></h1>
-                <p class="lead mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam feugiat erat quis pulvinar semper.</p>
-            </div>
+	<section  class="container nav align-items-center px-3">
+
+        <div  class="col-lg-8 my-4 d-flex flex-column ">
+            
+            <h1 class="display-5 fw-bold mb-4"> {t("home.desc")}</h1>
+        
             <div class="nav gap-2 align-items-center">
                 <a class="btn btn-lg btn-primary" href="">Get Started</a> 
                 <a class="btn btn-lg btn-outline-light" href="">Learn More</a>

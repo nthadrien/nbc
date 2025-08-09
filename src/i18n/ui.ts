@@ -13,8 +13,24 @@ export const languages = {
       'nav.news':"News",
       'nav.who':'Who we are?',
       "read":"read more",
+      "see":"see more",
+
       // pages
-      'about.desc':'We always deliver and Provide Efficient Solutions for Your Financial Management Needs',
+      'home.desc':"Transform your ideas into successful projects, from conception to impact.",
+
+      'services.our':"our services",
+      'services.desc':"We offer an integrated approach to ensure your project is not only well designed, but also well financed and managed for maximum impact.",
+
+      'steps':"Steps",
+      'steps.desc': "Do the first step and we will do the most difficult tasks to get the results you need:",
+      'step.one': "Reach out",
+      "step.one.desc": "This step is an opportunity to ensure that your budget and what you wish to achieve can meet the expected results.",
+      "step.two": "Service Proposal & Information",
+      "step.two.desc": "Then we formalize an agreement, clearly defining expectations for both parties and costs.",
+      "step.three": "Execution & Delivery",
+      "step.three.desc": "Once the work is completed, we will provide the agreed-upon results, along with accurate an explanation of the outcomes.",
+
+      'about.desc':'We deliver and provide Efficient Solutions for Your Financial Management Needs',
       'about.story':"Nti Business consulting was Founded by passionate experts, our firm was born with a clear mission: to transform our clients' visions into tangible successes. ",
       'about.story1':"We found that many ambitious projects lacked the necessary support, whether at the planning, financing or evaluation level. This is why we have combined our skills to create a complete and integrated solution.",
       'about.vision':'We have helped many organizations realize their goals, providing them with the tools and expertise they need to thrive.',
@@ -45,6 +61,16 @@ export const languages = {
       "test.client":"Customer Testimonials",
       "test.desc":"Here's what our customers say about us",
 
+      
+      "feat.why":"Why Choose Us?",
+      "feat.desc":"Trusted Partnership, Proven Results",
+      "feat.one":"Complete Expertise",
+      "feat.one.desc":"An experienced team covering all phases of the project life cycle.",
+      "feat.two":"Tailored Approach",
+      "feat.two.desc":"Solutions tailored to your specific needs, whatever the size or nature of your organization.",
+      "feat.three":"Measurable Results",
+      "feat.three.desc":"A commitment to delivering tangible results and real impact.",
+
       "slogan":"Transform our clients' visions into tangible successes."
 
     },
@@ -55,8 +81,24 @@ export const languages = {
       'nav.news':"Actualités",
       'nav.who':'Qui nous sommes?',
       "read":"Lire plus",
+      "see":"Voir plus",
+
       // pages
-      'about.desc':'Nous livrons et fournissons toujours des solutions efficaces pour vos besoins de gestion financière',
+      'home.desc':"Transformer vos idées en projets réussis, de la conception à l'impact.",
+
+      'services.our':"Nos Services",
+      'services.desc':"Nous offrons une approche intégrée pour vous assurer que votre projet est non seulement bien conçu, mais aussi bien financé et géré pour un impact maximal.",
+
+      'steps':"Étapes",
+      'steps.desc':"Faites la première étape et nous effectuerons les tâches les plus difficiles pour obtenir les résultats dont vous avez besoin :",
+      'step.one':"Nous Contactez",
+      "step.one.desc": "Cette étape est l'occasion de vous assurer que votre budget et ce que vous souhaitez réaliser peuvent répondre aux résultats attendus.",
+      "step.two": "Proposition de service et informations",
+      "step.two.desc": "Ensuite, nous formalisons un accord, définissant clairement les attentes des deux parties et les coûts.",
+      "step.three": "Exécution & Livraison",
+      "step.three.desc": "Une fois le travail terminé, nous fournirons les résultats convenus, ainsi qu'une explication précise des résultats.",
+
+      'about.desc':'Nous livrons et fournissons des solutions efficaces pour vos besoins de gestion financière',
       'about.story':"Nti Business consulting a été fondée par des experts passionnés, notre cabinet est né avec une mission claire : transformer les visions de nos clients en réussites tangibles.",
       'about.story1':"Nous avons constaté que de nombreux projets ambitieux manquaient du soutien nécessaire, que ce soit au niveau de la planification, du financement ou de l'évaluation. C'est pourquoi nous avons uni nos compétences pour créer une solution complète et intégrée.",
       'about.vision':"Au fils des annees nous avons aidé de nombreuses organisations à concrétiser leurs objectifs, en leur fournissant les outils et l'expertise dont elles ont besoin pour prospérer.",
@@ -86,6 +128,15 @@ export const languages = {
 
       "test.client":"Témoignages de Clients",
       "test.desc":"Voici ce que nos clients disent de nous",
+
+      "feat.why":"Pourquoi Nous Choisir ?",
+      "feat.desc":"Partenariat de confiance, résultats prouvés.",
+      "feat.one":"Expertise Complète",
+      "feat.one.desc":"Une équipe expérimentée couvrant toutes les phases du cycle de vie d'un projet.",
+      "feat.two":"Approche Sur Mesure",
+      "feat.two.desc":"Des solutions adaptées à vos besoins spécifiques, quelle que soit la taille ou la nature de votre organisation.",
+      "feat.three":"Résultats mesurables",
+      "feat.three.desc":" Un engagement à fournir des résultats tangibles et un impact réel.",
 
       "slogan":"Transformer les visions de nos clients en succès tangibles."
 
