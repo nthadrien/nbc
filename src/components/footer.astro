@@ -5,12 +5,13 @@ import Logo from "./logo.astro"
 
 const locale = getLangFromUrl(Astro.url);
 const t = useTranslations(locale);
+const refLink = `/nbc/${locale}`;
 
 const links = [
     {name: t('nav.home'), to:"/#"},
-    {name:"Blogs", to:"/#"},
-    {name:"F.A.Q", to:"/about#faq"},
-    {name: t('nav.who'), to:"/about-us#who"},
+    {name:"Blogs", to:refLink+"/#"},
+    {name:"F.A.Q", to:refLink+"/about#faq"},
+    {name: t('nav.who'), to:refLink+"/about-us#who"},
 ]
 
 const socials = [
@@ -48,7 +49,7 @@ const services = await getCollection("services",({ id }) => {
 
         <aside class="d-none d-md-block col-md-6 col-lg-3 text-center text-md-start">
             <h5 class="fw-bold">Services</h5>
-            {services.map( item => <a class="d-lg-block mb-1 mx-2 mx-lg-0" href={item.id}> 
+            {services.map( item => <a class="d-lg-block mb-1 mx-2 mx-lg-0" href={`${refLink}/services/${item.data.title}`}> 
                 <i class="bi bi-check2-circle me-1" />
                 {item.data.title}
             </a>)}

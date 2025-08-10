@@ -14,6 +14,7 @@ export const languages = {
       'nav.who':'Who we are?',
       "read":"read more",
       "see":"see more",
+      "talk":"Take The First Step.",
 
       // pages
       'home.desc':"Transform your ideas into successful projects, from conception to impact.",
@@ -61,7 +62,6 @@ export const languages = {
       "test.client":"Customer Testimonials",
       "test.desc":"Here's what our customers say about us",
 
-      
       "feat.why":"Why Choose Us?",
       "feat.desc":"Trusted Partnership, Proven Results",
       "feat.one":"Complete Expertise",
@@ -71,7 +71,11 @@ export const languages = {
       "feat.three":"Measurable Results",
       "feat.three.desc":"A commitment to delivering tangible results and real impact.",
 
-      "slogan":"Transform our clients' visions into tangible successes."
+      'contact.ready':"Willing to start or evaluate a business?",
+      'contact.today':"Contact us today to discuss your needs and find out how we can help you achieve your goals.",
+      'contact.hr':"Working hours: Monday - Friday from 08:00am - 7:00pm",
+
+      "slogan":"We transform our clients' visions into tangible successes."
 
     },
     fr: {
@@ -82,6 +86,7 @@ export const languages = {
       'nav.who':'Qui nous sommes?',
       "read":"Lire plus",
       "see":"Voir plus",
+      "talk":"Faites Le Premier Pas",
 
       // pages
       'home.desc':"Transformer vos idées en projets réussis, de la conception à l'impact.",
@@ -138,7 +143,11 @@ export const languages = {
       "feat.three":"Résultats mesurables",
       "feat.three.desc":" Un engagement à fournir des résultats tangibles et un impact réel.",
 
-      "slogan":"Transformer les visions de nos clients en succès tangibles."
+      'contact.ready':"Envie de démarrer ou évaluer un Projet?",
+      'contact.today':"Contactez-nous dès aujourd'hui pour discuter de vos besoins et découvrir comment nous pouvons vous aider à atteindre vos objectifs.",
+      'contact.hr':"Horaires de travail : du lundi au vendredi de 8h00 à 19h00",
+
+      "slogan":"Nous transformons les visions de nos clients en succès tangibles."
 
     },
   } as const;

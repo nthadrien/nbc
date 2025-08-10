@@ -7,7 +7,7 @@ import BlogCard from "./cards/blogCard.astro";
 import { getLangFromUrl } from "../i18n/utils";
 import { getCollection } from "astro:content";
 
-const posts = await getCollection("posts", post => post.id.includes("/"+locale) );
+const posts = await getCollection("posts", post => post.id.startsWith(locale+"/"));
 
 ---
 <section class="container-fluid d-flex flex-column gap-3 justify-content-center align-items-center py-5 bg-body-tertiary">

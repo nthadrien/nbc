@@ -3,12 +3,12 @@ import { getCollection } from "astro:content";
 import { getLangFromUrl, useTranslations } from "../i18n/utils";
 import Logo from "./logo.astro";
 import LangChanger from "./utils/langChanger.astro";
-import BlogCard from "./cards/blogCard.astro";
 
 const locale = getLangFromUrl(Astro.url);
 const { pathname } = Astro.url;
 const t = useTranslations(locale);
 const today = new Date().getTime(); 
+const refLink = `/nbc/${locale}`;
 
 
 const services = await getCollection("services", ({ id }) => {
@@ -23,20 +23,20 @@ const recentPosts = await getCollection("posts", ( { id,  data}) => {
 const showPosts = recentPosts.slice(0,2);
 
 const blogs = [
-    { name : "taxes" , icon:"me-2 bi bi-tag " , link:`/nbc/${locale}/blog/1`},
-    { name : "astuces" , icon:"me-2 bi bi-info" , link:`/nbc/${locale}/blog/1`},
-    { name : "articles" , icon:"me-2 bi bi-newspaper " , link:`/nbc/${locale}/blog/1`}
+    { name : "taxes" , icon:"me-2 bi bi-tag " , link:`${refLink}/blog/1`},
+    { name : "astuces" , icon:"me-2 bi bi-info" , link:`${refLink}/blog/1`},
+    { name : "articles" , icon:"me-2 bi bi-newspaper " , link:`${refLink}/blog/1`}
 ];
 
 const resources = [
-    { name : "Communaute" , icon:"me-2 bi bi-people " , link:`/nbc/${locale}/blog/1`},
-    { name : "Politiques de Privacy" , icon:"me-2 bi bi-people " , link:`/nbc/${locale}/blog/1`},
-    { name : "opportunites de .." , icon:"me-2 bi bi-node-plus " , link:`/nbc/${locale}/blog/1`},
-    { name : "temoinages" , icon:"me-2 bi bi-people " , link:`/nbc/${locale}/blog/1`}
+    { name : "Communaute" , icon:"me-2 bi bi-people " , link:`${refLink}/blog/1`},
+    { name : "Politiques de Privacy" , icon:"me-2 bi bi-people " , link:`${refLink}/blog/1`},
+    { name : "opportunites de .." , icon:"me-2 bi bi-node-plus " , link:`${refLink}/blog/1`},
+    { name : "temoinages" , icon:"me-2 bi bi-people " , link:`${refLink}/blog/1`}
 ];
 
 const proj = [
-    { name : "projet typ-1" , icon:"me-2 bi bi-archive" , link:`/nbc/${locale}/blog/1`}
+    { name : "projet typ-1" , icon:"me-2 bi bi-archive" , link:`${refLink}/blog/1`}
 ];
 ---
 
@@ -76,7 +76,7 @@ const proj = [
 
                 <ul class="navbar-nav flex-column flex-lg-row gap-2 justify-content-end justify-content-lg-center flex-grow-1 pe-3">
 
-                    <a class={`nav-link ${pathname.endsWith("fr") || pathname.endsWith("en") ? "active":'' }`} aria-current="page" href={`/nbc/${locale}`}>
+                    <a class={`nav-link ${pathname.endsWith("fr") || pathname.endsWith("en") ? "active":'' }`} aria-current="page" href={`${refLink}`}>
                         {t("nav.home")}
                     </a>
                     
@@ -92,9 +92,9 @@ const proj = [
                         </a>
 
                         <ul class="dropdown-menu">
-                            <a class="dropdown-item" href={`/nbc/${locale}/about-us#`}>{t("nav.who")}</a>
-                            <a  class="dropdown-item"  href={`/nbc/${locale}/about-us#team`}>Team</a>
-                            <a class="dropdown-item" href={`/nbc/${locale}/about-us#faq`}>faq</a>
+                            <a class="dropdown-item" href={`${refLink}/about-us#`}>{t("nav.who")}</a>
+                            <a  class="dropdown-item"  href={`${refLink}/about-us#team`}>Team</a>
+                            <a class="dropdown-item" href={`${refLink}/about-us#faq`}>faq</a>
                         </ul>
                     
                     </div>
@@ -132,7 +132,7 @@ const proj = [
                             <div class="col-lg-6 d-none d-lg-flex flex-column gap-2">
                                 <h6 class="fw-bold text-primary">Nouveaute</h6>
                                 <div style="font-size: smaller;" class="d-flex gap-1">
-                                    {showPosts.map( item => <a href={`/nbc/${locale}/blog/${item.data.title}`} class="col-md-6 position-relative border-end p-2">
+                                    {showPosts.map( item => <a href={`${refLink}/blog/${item.data.title}`} class="col-md-6 position-relative border-end p-2">
                                         <p>{item.data.tags.map( tag => <small class="btn btn-sm btn-primary me-1">{tag}</small>)}</p>
                                         <p class="fw-semibold"> {item.data.title} </p>
                                         <p>{item.data.description}</p>
@@ -156,7 +156,7 @@ const proj = [
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-end">
-                            {services.map( service => <a class="dropdown-item" href={`/nbc/${locale}/services/${service.data.title}`} >
+                            {services.map( service => <a class="dropdown-item" href={`${refLink}/services/${service.data.title}`} >
                                 <i class={`${service.data.icon} me-1`} /> 
                                 {service.data.title}
                             </a>)}

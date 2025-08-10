@@ -8,8 +8,10 @@ const t = useTranslations(locale);
 ---
 
 <section class="py-5 hero2">
+
     <div class="container row text-center justify-content-center mb-4 mx-auto">
-        <div class="col-12 col-lg-10 col-xl-8 text-center">
+        
+        <div class="col-12 col-lg-10 col-xl-8 text-center text-white">
             <p class="mb-0 fw-light">{t('steps')}</p>
             <h2>{locale ? "How It Works":"Comment ça marche"}</h2>
             <p class="lead mb-4">{t('steps.desc')}</p>
@@ -23,15 +25,15 @@ const t = useTranslations(locale);
                             data-iobs-transition={(index + 1) / 2 + "s"}
                             class="col-lg-4"
                         >
-                            <div class="rounded text-center p-3 bg-light  mb-5 mb-lg-0">
+                            <div class="rounded text-center p-3 bg-body text-bg-body  mb-5 mb-lg-0">
                                 <div
                                     class="d-flex rounded-circle mx-auto align-items-center justify-content-center fs-3 fw-bold text-bg-primary border border-white border-4"
                                     style="width: 4rem; height:4rem; margin-top:-3.5rem;"
                                 >
                                     {index + 1}
                                 </div>
-                                <h5 class="text-body">{t(`step.${item}`)}</h5>
-                                <p class="text-body">{t(`step.${item}.desc`)}</p>
+                                <h5>{t(`step.${item}`)}</h5>
+                                <p>{t(`step.${item}.desc`)}</p>
                             </div>
                         </div>
                     ))

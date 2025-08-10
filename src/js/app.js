@@ -13,7 +13,6 @@ import 'bootstrap/js/dist/tab';
 // import 'bootstrap/js/dist/toast';
 // import 'bootstrap/js/dist/tooltip';
 
-
 const animatedElements = document.querySelectorAll('[data-iobs]');
 const statsIncrementElements = document.querySelectorAll('[data-iobs-value]');
 

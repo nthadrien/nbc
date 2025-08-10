@@ -36,12 +36,14 @@ const expert = await getEntry(service.data.author);
 <Layout title={service.data.title} desc={service.data.description}>
 
 
-    <header id="blog-header" style="min-height: 280px;" class="hero3 p-5 d-flex flex-column justify-content-center align-items-center">
+    <header id="page-hero" class="hero3 p-5 d-flex flex-column justify-content-center align-items-center">
     
-        <h1 class="fw-bold display-4">Services</h1>
-        <p class="lead">
-            {service.data.description}
-        </p>
+        <div class="container">
+            <h1 class="fw-bold display-4">Services</h1>
+            <p class="lead">
+                {service.data.description}
+            </p>
+        </div>
 
     </header>
 

@@ -4,21 +4,27 @@ import { languages } from "../../../i18n/ui";
 
 import Services from "../../../components/services.astro";
 import Layout from "../../../layouts/Layout.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 
 export const getStaticPaths = (() => {
 	return Object.keys(languages).map( locale => ({ 
 		params : { locale }
 	}));
 }) satisfies GetStaticPaths;
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
 ---
 
 
 <Layout title="services">
     
-    <header style="min-height: 280px;" class="hero3 p-5 d-flex flex-column justify-content-center align-items-center">
-
-        <h1 class="fw-bolder">Services</h1>
-        <p class="text-primary lead"></p>
+   
+    <header id="page-hero" class="hero3 p-5 d-flex flex-column justify-content-center align-items-center">
+    
+        <div class="container">
+            <h1 class="fw-bold display-4">Services</h1>
+            <p class="lead">{t('services.our')}</p>
+        </div>
 
     </header>
 

@@ -87,7 +87,7 @@ a {
 .hero1, .hero2, .hero3 {
     background-size: cover;
     background-blend-mode:color;
-    color: white;
+    
 }
 
 .small {
@@ -96,7 +96,8 @@ a {
 
 #page-hero {
     min-height: max(540px,70vh);
-    max-height: 720px;
+    max-height: 690px;
+    color: white;
 }
 
 [data-iobs] {

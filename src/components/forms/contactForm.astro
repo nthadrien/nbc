@@ -1,33 +1,48 @@
+---
+import { getLangFromUrl, useTranslations } from "../../i18n/utils"
+
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
+
+
+const address = [
+    { icon: "bi bi-telephone-fill", to:"+237 667 316 329"},
+    { icon: "bi bi-google", to:"ntibusinessconsulting@gmail.com"},
+]
+
+---
 
 <!-- Modal -->
-<aside class="modal fade" id="contactUs" tabindex="-1" aria-labelledby="contactUsLabel" aria-hidden="true">
+<aside class="modal fade" data-bs-backdrop="static" id="contactUs" tabindex="-1" aria-labelledby="contactUsLabel" aria-hidden="true">
 
-    <div class="modal-dialog">
+    <div class="modal-dialog modal-dialog-centered">
 
       <div class="modal-content">
 
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalLabel">Let's Talk</h1>
+        <div class="modal-header border-0 py-1">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">{t('talk')}</h1>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         
-        <form class="modal-body border-top">
+        <form class="modal-body pt-1">
 
-            <h2 class="display-5 fw-bold">Contact Us</h2>
-            <p>Tailored Solutions for Your Financial Growth, Explore Opportunities.</p>
-            <p>
-                <a class="me-4" href="tel:+1(234)%20567-89-01">+1(234) 567-89-10</a> 
-                <br/>
-                <a class="" href="mailto:info@collector.com">hello@yourdomain.com</a>
-                <br/>
-                Working hours: Mon - fri from 08am - 08pm
-            </p>
-            
-            <input type="text" class="form-control mb-3" name="name" required/>
-            <input type="text" class="form-control mb-3" placeholder="phone / email" name="address" required>
-            <textarea class="form-control mb-3" name="message" rows="2" placeholder="hi, ..." required></textarea>
-            <button class="btn btn-primary" type="submit">Send</button>
-            
+          <h2 class="display-5 fw-bold">{t('nav.contact')}</h2>
+          <p>{t('slogan')}</p>
+          
+          {address.map( addr => <a class="d-block" target="_blank"> 
+            <i class={`me-1 text-primary ${addr.icon}`} /> {addr.to}
+          </a>)}
+          <p>
+            <i class="bi bi-alarm-fill me-1 text-primary" />
+            {t('contact.hr')}
+          </p>
+
+          <input placeholder="Nom / Prenom" type="text" class="form-control mb-3" name="name" required />
+          <input placeholder="Email / Tel" type="text" class="form-control mb-3" name="mail" required />
+          <textarea placeholder="Message" class="form-control mb-3" name="message" required></textarea>
+          
+          <button class="btn btn-primary" type="submit">Send</button>
+
         </form>
 
       </div>

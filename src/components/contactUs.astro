@@ -1,12 +1,18 @@
+---
+import { getLangFromUrl, useTranslations } from "../i18n/utils"
 
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
+---
 
 <section id="contact-us" class="container-fluid d-flex flex-column gap-3 justify-content-center align-items-center py-5 rounded-3 text-bg-primary bg-gradient">
 
   <aside class="col-md-6">
-      <span>Our Strategy</span>
-      <h3 class="display-6 fw-bold">Make your business stand out with our personalized accounting services.</h3>
-      <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Soluta harum ipsum venenatis metus sem veniam eveniet aperiam suscipit.</p>
-      <button data-bs-toggle="modal" data-bs-target="#contactUs" class="btn btn-secondary">Contact US</button>
+      <span>{t('contact.ready')}</span>
+      <h5 class="display-6 fw-bold mb-3">
+        {t('contact.today')}
+      </h5>
+      <button data-bs-toggle="modal" data-bs-target="#contactUs" class="btn btn-dark">{t('nav.contact')}</button>
   </aside>
 
 </section>
