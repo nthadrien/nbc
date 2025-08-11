@@ -4,6 +4,7 @@ import { getCollection, getEntry, render, type CollectionEntry  } from 'astro:co
 import { languages } from "../../../i18n/ui";
 import Layout from "../../../layouts/Layout.astro";
 import ServicesHeader from "../../../components/headers/servicesHeader.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 // 1. Generate a new path for every collection entry
 
 export const getStaticPaths = (async() => {
@@ -30,7 +31,8 @@ interface Props {
 const { service } = Astro.props;
 const { Content, remarkPluginFrontmatter, headings } = await render(service);
 
-
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
 const expert = await getEntry(service.data.author);
 ---
 
@@ -39,47 +41,31 @@ const expert = await getEntry(service.data.author);
 
     <ServicesHeader hText={service.data.description} currentPage={service.data.title} />
 
-    <div class="container mx-auto row g-3 py-5 px-3 position-relative">
+    <div class="container mx-auto nav flex-column flex-lg-row py-5 px-3 position-relative">
 
+        <nav class="col-lg-4 order-0 order-lg-2">
 
-        <aside class="col-lg-9">
-            <h2>
-                {service.data.title}  <i class={`fs-3 ${service.data.icon}`} />
-            </h2>
-            <p>{remarkPluginFrontmatter.minutesRead} <span class="vr mx-3" /> Expert : {expert.data.name}, {expert.data.role}</p>
-
-            <nav class="col-12 d-block d-lg-none">
-                <h4>Content</h4>
-                <ul class="">
+            <div class="sticky-top">
+                <h4>{t('t.content')}</h4>
+                <ul class="border-start border-3 border-primary mb-3">
+                    
                     {headings.map( head => <li class={head.depth > 2 ? `ms-${head.depth-1}` : ``}>
                         <a href={`#${head.slug}`}>{head.text} </a>
                     </li>)}
                 </ul>
-            </nav>
-
-            <main class="lh-lg py-3 border-top">
-                <Content /> 
-            </main>
-        </aside>
-
-        <nav style="top:2rem;" class="d-none d-lg-block col-lg-3">
-            <div class="sticky-lg-top">
-                <h4>Content</h4>
-                {headings.map( head => <li class={head.depth > 2 ? `ms-${head.depth-1}` : ``}>
-                    <a href={`#${head.slug}`}>{head.text} </a>
-                </li>)}
             </div>
+
         </nav>
-       
 
-        <section class="col-9">
-            <a data-iobs="right" href={`/nbc/${service.id.slice(0,2)}/services`} class="p-2 border-bottom border-primary">
-                back to services
+        <main id="content" class="col-lg-8">
+            <p>Expert : {expert.data.name}, {expert.data.role} <span class="vr mx-3" /> {remarkPluginFrontmatter.minutesRead} </p>
+            <Content /> 
+        </main>
+        
+        <section class="col-9 order-4 pt-3">
+            <a data-iobs="right" href={`/nbc/${service.id.slice(0,2)}/services`} class="btn btn-outline-primary">
+                <i class="bi bi-arrow-left"></i> services
             </a>
-        </section>
-
-        <section>
-            Certains Project lies a ce service ? :
         </section>
                 
     </div>
@@ -87,5 +73,12 @@ const expert = await getEntry(service.data.author);
 </Layout>
 
 <style>
+    h1, h2, h3 {
+        color: var(--bs-primary);
+    }
 
+    #content blockquote p {
+        padding: 1rem !important;
+        border-left: 1rem solid $primary ;
+    }
 </style>

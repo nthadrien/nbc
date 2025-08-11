@@ -15,6 +15,7 @@ export const languages = {
       "read":"read more",
       "see":"see more",
       "talk":"Take The First Step.",
+      "t.content":"Table Of Content",
 
       // pages
       'home.desc':"Transform your ideas into successful projects, from conception to impact.",
@@ -93,6 +94,7 @@ export const languages = {
       "read":"Lire plus",
       "see":"Voir plus",
       "talk":"Faites Le Premier Pas",
+      "t.content":"Table Des Matières",
 
       // pages
       'home.desc':"Transformer vos idées en projets réussis, de la conception à l'impact.",

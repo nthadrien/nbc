@@ -40,7 +40,6 @@ const serviceCollection = defineCollection({
       author: reference('members'),
       description: z.string(),
       date: z.date(),
-      tags: z.array(z.string()),
       icon: z.string()
     })
 });
