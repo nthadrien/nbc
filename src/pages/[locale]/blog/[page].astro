@@ -46,18 +46,10 @@ const { pageSize } = Astro.params as Params;
 
             <aside class="col-12 col-md-8 col-xl-9 row g-3 flex-order-2">
 
-                <h4 class="col-12 col-lg-12">Posts </h4>
-
                 {page.data.map( item => <div class="col-6 col-lg-4">
                     <BlogCard  post={item} />
                 </div>)}
-                {page.data.map( item => <div class="col-6 col-lg-4">
-                      <BlogCard  post={item} />
-                  </div>)}
-                  {page.data.map( item => <div class="col-6 col-lg-4">
-                    <BlogCard  post={item} />
-                </div>)}
-
+                
                 <Pagination data={page.url} size={pageSize} />
             </aside>
 

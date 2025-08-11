@@ -84,6 +84,10 @@ export const languages = {
       "stats.years":"Years of experience",
       "stats.folw":"Projets Followed",
 
+      'posts':'posts',
+      'post.new':"Latest Updates",
+      'post.desc':"Get the lastest on Business, Financial and Accounting topics."
+
     },
     fr: {
       'nav.home': 'Accueil',
@@ -163,5 +167,8 @@ export const languages = {
       "stats.years":"Années d'expérience",
       "stats.folw":"Projets suivi",
 
+      'posts':'Postes',
+      'post.new': "Nouveauté",
+      'post.desc': "Nos Derniers Articles de Blog",
     },
   } as const;

@@ -9,14 +9,16 @@ const { data , size } = Astro.props;
 ---
 
 
-<nav class="nav gap-2 p-3">
+<nav class="container mx-auto nav justify-content-center gap-2 p-3">
 
-    <div>
-        {data.first ? <a href={data.first}>First</a> : null}
-        {data.prev ? <a href={data.prev}>Previous</a> : null}
-        <a href={data.current} class="btn btn-primary active">{data.current.slice(-1)}</a>
-        {data.next ? <a href={data.next}>Next</a> : null}
-        {data.last ? <a href={data.last}>Last</a> : null}
-    </div>
+    {data.first ? <a href={data.first}>First</a> : null}
+    {data.prev ? <a href={data.prev}>Previous</a> : null}
+    <a href={data.current} class="btn btn-primary active">{data.current.slice(-1)}</a>
+    {data.next ? <a href={data.next}>Next</a> : null}
+    {data.last ? <a href={data.last}>Last</a> : null}
+
+
+    {size}
+
 
 </nav>

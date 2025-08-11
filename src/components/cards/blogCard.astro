@@ -1,6 +1,8 @@
 ---
 import type { CollectionEntry } from 'astro:content'
 import { getLangFromUrl, useTranslations } from '../../i18n/utils';
+import { render } from 'astro:content';
+import { remarkReadingTime } from '../../../remark-reading-time.mjs';
 
 const locale = getLangFromUrl(Astro.url);
 const t = useTranslations(locale);
@@ -10,12 +12,12 @@ interface Props {
 }
 
 const { post } = Astro.props;
-
+const { remarkPluginFrontmatter } = await render(post);
 ---
 <div class="position-relative">
 
     <div class="position-absolute start-0 top-0 nav gap-2 p-3">
-        {post.data.tags.map( tag => <a href={`/nbc/${locale}/blog/${tag}`} class="btn btn-sm btn-secondary">
+        {post.data.tags.map( tag => <a href={`/nbc/${locale}/blog/${tag}`} class="btn btn-sm btn-primary">
             {tag}
         </a>)}
     </div>
@@ -23,8 +25,14 @@ const { post } = Astro.props;
     <img style="height: 220px; width:100%;" alt={post.data.featuredImg.url} class="bg-dark-subtle" src={`/nbc/${post.data.featuredImg.url}`}>
 
     <div class="p-1">
-        <h4 class="fw-bold">{post.data.title}</h4>
-        <span class="text-black-50">{new Date(post.data.publishedDate).toDateString()}</span>
+       
+        <div class="nav justify-content-between align-items-center text-black-50">
+            <small>{new Date(post.data.publishedDate).toDateString()}</small>
+            <small>{remarkPluginFrontmatter.minutesRead}</small>
+        </div>
+
+        <h4 style="line-clamp: 2;max-height: 2.5em;" class="fw-bold overflow-hidden">{post.data.title}</h4>
+
         <p>{post.data.description}</p>
        
         <a class="icon-link icon-link-hover text-capitalize" href={`/nbc/${locale}/blog/${post.data.title}`}>
