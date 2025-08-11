@@ -3,6 +3,7 @@ import type { GetStaticPaths } from "astro";
 import { getCollection, getEntry, render, type CollectionEntry  } from 'astro:content';
 import { languages } from "../../../i18n/ui";
 import Layout from "../../../layouts/Layout.astro";
+import ServicesHeader from "../../../components/headers/servicesHeader.astro";
 // 1. Generate a new path for every collection entry
 
 export const getStaticPaths = (async() => {
@@ -36,17 +37,7 @@ const expert = await getEntry(service.data.author);
 <Layout title={service.data.title} desc={service.data.description}>
 
 
-    <header id="page-hero" class="hero3 p-5 d-flex flex-column justify-content-center align-items-center">
-    
-        <div class="container">
-            <h1 class="fw-bold display-4">Services</h1>
-            <p class="lead">
-                {service.data.description}
-            </p>
-        </div>
-
-    </header>
-
+    <ServicesHeader hText={service.data.description} currentPage={service.data.title} />
 
     <div class="container mx-auto row g-3 py-5 px-3 position-relative">
 

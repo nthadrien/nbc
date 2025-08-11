@@ -9,7 +9,7 @@ const { pathname } = Astro.url;
 const t = useTranslations(locale);
 const today = new Date().getTime(); 
 const refLink = `/nbc/${locale}`;
-
+const activeLink = "active fw-bold";
 
 const services = await getCollection("services", ({ id }) => {
     return id.startsWith(locale + "/");
@@ -68,21 +68,21 @@ const proj = [
         >
 
             <section class="offcanvas-header">
-                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close" />
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close" />
             </section>
 
 
             <section class="offcanvas-body">
 
-                <ul class="navbar-nav flex-column flex-lg-row gap-2 justify-content-end justify-content-lg-center flex-grow-1 pe-3">
+                <ul class="navbar-nav nav flex-column flex-lg-row gap-2 justify-content-end justify-content-lg-center flex-grow-1 pe-3">
 
-                    <a class={`nav-link ${pathname.endsWith("fr") || pathname.endsWith("en") ? "active":'' }`} aria-current="page" href={`${refLink}`}>
+                    <a class={`nav-link ${pathname.endsWith("fr") || pathname.endsWith("en") ? activeLink :'' }`} aria-current="page" href={`${refLink}`}>
                         {t("nav.home")}
                     </a>
                     
                    <div class="dropdown">
                         <a
-                            class={`nav-link dropdown-toggle ${pathname.search("about-us") > 0 ? "active":'' }`}
+                            class={`nav-link dropdown-toggle ${pathname.search("about-us") > 0 ? activeLink :'' }`}
                             href="#"
                             role="button"
                             data-bs-toggle="dropdown"
@@ -100,7 +100,7 @@ const proj = [
                     </div>
 
                     <a
-                        class={`nav-link dropdown-toggle ${pathname.includes("/blog") || pathname.includes("/project") ? "active":'' }`}
+                        class={`nav-link dropdown-toggle ${pathname.includes("/blog") || pathname.includes("/project") ? activeLink :'' }`}
                         href="#"
                         role="button"
                         data-bs-toggle="dropdown"
@@ -146,7 +146,7 @@ const proj = [
 
                     <div class="dropdown">
                         <a
-                        class={`nav-link dropdown-toggle ${pathname.search("/services") > 0 ? "active":'' }`}
+                        class={`nav-link dropdown-toggle ${pathname.search("/services") > 0 ? activeLink :'' }`}
                         href="#"
                         role="button"
                         data-bs-toggle="dropdown"

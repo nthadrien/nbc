@@ -1,15 +1,15 @@
 ---
-import { getLangFromUrl } from "../i18n/utils"
+import { getLangFromUrl, useTranslations } from "../i18n/utils"
 
 const locale = getLangFromUrl(Astro.url);
-const loc = locale == "en";
+const t = useTranslations(locale);
 
 ---
 
 <section class="py-5">
     <div style="max-width: 768px;" data-iobs="down" data-iobs-transition="1s"  class="container mx-auto text-center">
-        <h2 class="display-5 fw-bold mb-2">The Possibilities Are Endless</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloribus, non recusandae nulla rerum minus</p>
+        <h2 class="display-5 fw-bold mb-2">{t('stats.title')}</h2>
+        <p>{t('stats.desc')}</p>
     </div>
 </section>
 
@@ -18,11 +18,11 @@ const loc = locale == "en";
     <div class="row row-cols-2 row-cols-lg-4  bg-body text-center display-5">
         <div class="col p-3 border-end">
             <span class="fw-bold fs-2 text-primary" data-iobs-value="1" data-iobs-final="53">0</span> + 
-            <br/>{loc ? "Statisfied customers":"Clients satisfaits"}</p>
+            <br/>{t('stats.client')}:</p>
         </div>
         <div class="col p-3">
             <span class="fw-bold fs-2 text-primary" data-iobs-value="1" data-iobs-final="5">0</span> + 
-            <p>{ loc ? "Years of experience":"Années d'expérience"}</p>
+            <p>{ t('stats.years')}</p>
         </div>
         <div class="col p-3 text-bg-primary border-end">
             <span class="fw-bold fs-2" data-iobs-value="1" data-iobs-final="3">0</span> + 
@@ -30,7 +30,7 @@ const loc = locale == "en";
         </div>
         <div class="col p-3">
             <span class="fw-bold fs-2 text-primary" data-iobs-value="1" data-iobs-final="200">0</span> + 
-            <br/> {loc ? "Projets Followed" :"Projets suivi"}
+            <br/> {t('stats.folw')}
         </div>
     </div>
 

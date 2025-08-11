@@ -75,7 +75,13 @@ export const languages = {
       'contact.today':"Contact us today to discuss your needs and find out how we can help you achieve your goals.",
       'contact.hr':"Working hours: Monday - Friday from 08:00am - 7:00pm",
 
-      "slogan":"We transform our clients' visions into tangible successes."
+      "slogan":"We transform our clients' visions into tangible successes.",
+
+      "stats.title":"structure your projects with strategic planning",
+      "stats.desc":"Be confident that your efforts are paying off. Our monitoring and evaluation tools provide you with clear data and relevant analyzes to measure the effectiveness of your project",
+      "stats.client":"Statisfied customers",
+      "stats.years":"Years of experience",
+      "stats.folw":"Projets Followed",
 
     },
     fr: {
@@ -147,7 +153,13 @@ export const languages = {
       'contact.today':"Contactez-nous dès aujourd'hui pour discuter de vos besoins et découvrir comment nous pouvons vous aider à atteindre vos objectifs.",
       'contact.hr':"Horaires de travail : du lundi au vendredi de 8h00 à 19h00",
 
-      "slogan":"Nous transformons les visions de nos clients en succès tangibles."
+      "slogan":"Nous transformons les visions de nos clients en succès tangibles.",
+
+      "stats.title":"Structurez vos projet avec une planification stratégique",
+      "stats.desc":"Ayez l'assurance que vos efforts portent leurs fruits. Nos outils de suivi et d'évaluation vous fournissent des données claires et des analyses pertinentes pour mesurer l'efficacité de votre projet",
+      "stats.client":"Clients satisfaits",
+      "stats.years":"Années d'expérience",
+      "stats.folw":"Projets suivi",
 
     },
   } as const;
