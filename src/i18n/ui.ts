@@ -86,8 +86,9 @@ export const languages = {
 
       'posts':'posts',
       'post.new':"Latest Updates",
-      'post.desc':"Get the lastest on Business, Financial and Accounting topics."
-
+      'post.desc':"Get the lastest on Business, Financial and Accounting topics.",
+      'terms':"Terms and Conditions",
+      'privacy':"Privacy Policy",
     },
     fr: {
       'nav.home': 'Accueil',
@@ -170,5 +171,8 @@ export const languages = {
       'posts':'Postes',
       'post.new': "Nouveauté",
       'post.desc': "Nos Derniers Articles de Blog",
+
+      'terms':"Termes et Conditions",
+      'privacy':"Politique de confidentialité",
     },
   } as const;

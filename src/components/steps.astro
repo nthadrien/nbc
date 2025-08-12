@@ -13,7 +13,7 @@ const t = useTranslations(locale);
         
         <div class="col-12 col-lg-10 col-xl-8 text-center text-white">
             <p class="mb-0 fw-light">{t('steps')}</p>
-            <h2>{locale ? "How It Works":"Comment ça marche"}</h2>
+            <h2>{locale == "en"? "How It Works":"Comment ça marche"}</h2>
             <p class="lead mb-4">{t('steps.desc')}</p>
         </div>
 

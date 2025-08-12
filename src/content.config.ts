@@ -67,11 +67,20 @@ const comments = defineCollection({
     day: z.coerce.date(),
     replies: z.array(reference('comment'))
   })
+});
+
+const termsCollection = defineCollection({
+  loader: glob({ pattern:  '**/[^_]*.md', base: "src/data/terms&conditions" }),
+    schema: z.object({
+      lang: z.string(),
+      updated: z.coerce.date(),
+    })
 })
 
 export const collections = {
   'posts': postCollection,
   'members': teamCollection,
   'services':serviceCollection,
-  'testimonials': reviewCollection
+  'testimonials': reviewCollection,
+  'terms': termsCollection
 };

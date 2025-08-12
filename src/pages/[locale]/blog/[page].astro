@@ -11,6 +11,7 @@ import Layout from "../../../layouts/Layout.astro";
 import CategoryTags from "../../../components/forms/categoryTags.astro";
 import Pagination from "../../../components/utils/pagination.astro";
 import PostContactBtn from "../../../components/forms/postContactBtn.astro";
+import { getLangFromUrl, useTranslations } from "../../../i18n/utils";
 
 export const getStaticPaths = ( async ({ paginate }) => {
   const locales = Object.keys(languages);
@@ -29,11 +30,13 @@ type Params = InferGetStaticParamsType<typeof getStaticPaths>;
 
 const { page } = Astro.props;
 const { pageSize } = Astro.params as Params;
+const locale = getLangFromUrl(Astro.url);
+const t = useTranslations(locale);
 ---
 
 <Layout>
 
-    <!-- <BlogHeader currentPage="Blog" hText="" /> -->
+    <BlogHeader currentPage="Blog" hText={t('post.desc')} />
 
     <main class="py-5 container-xxl">
 

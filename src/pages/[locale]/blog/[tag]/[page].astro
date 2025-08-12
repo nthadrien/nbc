@@ -21,7 +21,7 @@ export const getStaticPaths = ( async ({ paginate }) => {
 
     return locales.flatMap( locale => {
         const selectedPosts = allPosts.filter( item => item.id.includes(locale+"/") );
-        return postTags.flatMap( tag => {
+        return postTags.flatMap( (tag) => {
             const filteredPosts = selectedPosts.filter( item => item.data.tags.includes(tag) );
             return paginate( filteredPosts , {
                 params : { locale , tag  },
@@ -43,7 +43,7 @@ const t = useTranslations(locale);
 
 <Layout>
 
-    <BlogHeader currentPage={"Blog"} hText={t('post.desc')} />
+    <BlogHeader currentPage={tag} hText={t('post.new')} />
 
     <main class="py-5 container-xxl">
 
