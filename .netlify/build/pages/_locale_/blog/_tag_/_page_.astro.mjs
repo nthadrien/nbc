@@ -1,13 +1,13 @@
 import { a as createAstro, c as createComponent, d as renderComponent, r as renderTemplate, m as maybeRenderHead } from '../../../../chunks/astro/server_CzyFbPgW.mjs';
 import 'kleur/colors';
-import { g as getCollection } from '../../../../chunks/_astro_content_DkcjdUKO.mjs';
-import { $ as $$BlogCard } from '../../../../chunks/blogCard_Oa5qKU-R.mjs';
-import { $ as $$BlogHeader } from '../../../../chunks/blogHeader_C8XS_j4t.mjs';
-import { g as getLangFromUrl, $ as $$Layout, l as languages, u as useTranslations } from '../../../../chunks/Layout_BDRXeEiN.mjs';
-import { p as postTags, $ as $$CategoryTags, a as $$PostContactBtn, b as $$Pagination } from '../../../../chunks/postContactBtn_gp0oCSem.mjs';
+import { g as getCollection } from '../../../../chunks/_astro_content_BzyKczLG.mjs';
+import { $ as $$BlogCard } from '../../../../chunks/blogCard_BUz68HfL.mjs';
+import { $ as $$BlogHeader } from '../../../../chunks/blogHeader_B8QR5jDT.mjs';
+import { g as getLangFromUrl, $ as $$Layout, l as languages, u as useTranslations } from '../../../../chunks/Layout_B2cSL3LT.mjs';
+import { p as postTags, $ as $$CategoryTags, a as $$PostContactBtn, b as $$Pagination } from '../../../../chunks/postContactBtn_DsJ1MvMp.mjs';
 export { renderers } from '../../../../renderers.mjs';
 
-const $$Astro = createAstro("https://ntibusinessconsulting.netlify.com");
+const $$Astro = createAstro("https://ntibusinessconsulting.netlify.app");
 const getStaticPaths = async ({ paginate }) => {
   const pageSize = 18;
   const locales = Object.keys(languages);

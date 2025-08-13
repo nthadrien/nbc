@@ -1,25 +1,25 @@
 import { a as createAstro, c as createComponent, m as maybeRenderHead, r as renderTemplate, b as addAttribute, d as renderComponent } from '../chunks/astro/server_CzyFbPgW.mjs';
 import 'kleur/colors';
-import { g as getLangFromUrl, u as useTranslations, $ as $$Layout, l as languages } from '../chunks/Layout_BDRXeEiN.mjs';
-import { $ as $$ContactUs } from '../chunks/contactUs_CZIA6hQ2.mjs';
+import { g as getLangFromUrl, u as useTranslations, $ as $$Layout, l as languages } from '../chunks/Layout_B2cSL3LT.mjs';
+import { $ as $$ContactUs } from '../chunks/contactUs_DGrZfUnB.mjs';
 import 'clsx';
-import { $ as $$Services } from '../chunks/services_2GqWbRMm.mjs';
-import { $ as $$Steps } from '../chunks/steps_CMLEqWQI.mjs';
-import { $ as $$BlogCard } from '../chunks/blogCard_Oa5qKU-R.mjs';
-import { g as getCollection } from '../chunks/_astro_content_DkcjdUKO.mjs';
+import { $ as $$Services } from '../chunks/services_BleWyEmS.mjs';
+import { $ as $$Steps } from '../chunks/steps_CO0doMrt.mjs';
+import { $ as $$BlogCard } from '../chunks/blogCard_BUz68HfL.mjs';
+import { g as getCollection } from '../chunks/_astro_content_BzyKczLG.mjs';
 export { renderers } from '../renderers.mjs';
 
-const $$Astro$3 = createAstro("https://ntibusinessconsulting.netlify.com");
+const $$Astro$3 = createAstro("https://ntibusinessconsulting.netlify.app");
 const $$Features = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$3, $$props, $$slots);
   Astro2.self = $$Features;
   const featList = ["one", "two", "three"];
   const locale = getLangFromUrl(Astro2.url);
   const t = useTranslations(locale);
-  return renderTemplate`${maybeRenderHead()}<section id="why" class="py-5"> <div class="container row mx-auto"> <div class="col-md-6"> <img alt="" class="img-fluid w-100 h-100 object-fit-contain rounded-2" src="/nbc/imgs/hero6.avif"> </div> <div class="col-md-6"> <span>${t("feat.why")}</span> <h2 class="display-6 fw-bold">${t("feat.desc")}</h2> <ul class="list-unstyled"> ${featList.map((feature) => renderTemplate`<li class=" d-flex gap-3 mb-2"> <i class="fs-4 bi bi-check-circle-fill text-info"></i> <div> <strong class="text-info">${t(`feat.${feature}`)}</strong> <br> ${t(`feat.${feature}.desc`)} </div> </li>`)} </ul> <a href="/nbc/fr/about-us#clients" class=""> ${t("test.client")} <i class="bi bi-arrow-right"></i> </a> </div> </div> </section>`;
+  return renderTemplate`${maybeRenderHead()}<section id="why" class="py-5"> <div class="container row mx-auto"> <div class="col-md-6"> <img alt="" class="img-fluid w-100 h-100 object-fit-contain rounded-2" src="/imgs/hero2.avif"> </div> <div class="col-md-6"> <span>${t("feat.why")}</span> <h2 class="display-6 fw-bold">${t("feat.desc")}</h2> <ul class="list-unstyled"> ${featList.map((feature) => renderTemplate`<li class=" d-flex gap-3 mb-2"> <i class="fs-4 bi bi-check-circle-fill text-info"></i> <div> <strong class="text-info">${t(`feat.${feature}`)}</strong> <br> ${t(`feat.${feature}.desc`)} </div> </li>`)} </ul> <a href="/fr/about-us#clients" class=""> ${t("test.client")} <i class="bi bi-arrow-right"></i> </a> </div> </div> </section>`;
 }, "D:/Personal Dev Projects/important/nti-consulting/src/components/features.astro", void 0);
 
-const $$Astro$2 = createAstro("https://ntibusinessconsulting.netlify.com");
+const $$Astro$2 = createAstro("https://ntibusinessconsulting.netlify.app");
 const $$HomeHeader = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$2, $$props, $$slots);
   Astro2.self = $$HomeHeader;
@@ -28,7 +28,7 @@ const $$HomeHeader = createComponent(($$result, $$props, $$slots) => {
   return renderTemplate`${maybeRenderHead()}<header id="page-hero" class="hero1 py-5 hero3 d-flex justify-content-center align-items-center"> <section class="container nav align-items-center px-3"> <div class="col-lg-8 my-4 d-flex flex-column "> <h1 class="display-5 fw-bold mb-4"> ${t("home.desc")}</h1> <div class="nav gap-2 align-items-center"> <a class="btn btn-lg btn-primary" href="#services">${t("services.our")}</a> <a class="btn btn-lg btn-outline-light" href="#why">${t("feat.why")}</a> </div> </div> </section> </header>`;
 }, "D:/Personal Dev Projects/important/nti-consulting/src/components/headers/homeHeader.astro", void 0);
 
-const $$Astro$1 = createAstro("https://ntibusinessconsulting.netlify.com");
+const $$Astro$1 = createAstro("https://ntibusinessconsulting.netlify.app");
 const $$Statistics = createComponent(($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro$1, $$props, $$slots);
   Astro2.self = $$Statistics;
@@ -42,7 +42,7 @@ const $$Statistics = createComponent(($$result, $$props, $$slots) => {
 <br> ${t("stats.folw")} </div> </div> </section>`;
 }, "D:/Personal Dev Projects/important/nti-consulting/src/components/statistics.astro", void 0);
 
-const $$Astro = createAstro("https://ntibusinessconsulting.netlify.com");
+const $$Astro = createAstro("https://ntibusinessconsulting.netlify.app");
 const $$LatestPost = createComponent(async ($$result, $$props, $$slots) => {
   const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
   Astro2.self = $$LatestPost;

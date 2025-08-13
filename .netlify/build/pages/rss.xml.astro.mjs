@@ -1,5 +1,5 @@
 import rss from '@astrojs/rss';
-import { g as getCollection } from '../chunks/_astro_content_DkcjdUKO.mjs';
+import { g as getCollection } from '../chunks/_astro_content_BzyKczLG.mjs';
 export { renderers } from '../renderers.mjs';
 
 async function GET(context) {

@@ -12,7 +12,7 @@ Disallow: /admin
 
 # This line points to the location of your sitemap.xml file.
 # Make sure your sitemap is generated correctly and this path is accurate.
-Sitemap: ${"https://ntibusinessconsulting.netlify.com"}/sitemap-index.xml
+Sitemap: ${"https://ntibusinessconsulting.netlify.app"}/sitemap-index.xml
 `.trim();
   return new Response(robotsTxt, {
     status: 200,

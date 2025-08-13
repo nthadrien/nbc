@@ -6,7 +6,7 @@ import { socials, address } from "../data/address";
 
 const locale = getLangFromUrl(Astro.url);
 const t = useTranslations(locale);
-const refLink = `/nbc/${locale}`;
+const refLink = `/${locale}`;
 const lastLinks = refLink+`/`+ (locale == "en" ? "terms-and-condittions":"termes-et-conditions")
 
 const links = [

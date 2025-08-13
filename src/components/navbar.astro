@@ -8,7 +8,7 @@ const locale = getLangFromUrl(Astro.url);
 const { pathname } = Astro.url;
 const t = useTranslations(locale);
 const today = new Date().getTime(); 
-const refLink = "" // `/nbc/${locale}`;
+const refLink = `/${locale}`;
 const activeLink = "active fw-bold";
 
 const services = await getCollection("services", ({ id }) => {
@@ -46,7 +46,7 @@ const proj = [
         class="container mx-auto d-flex justify-content-between align-itms-center px-2 py-1"
     >
         <btn class="btn btn-sm">
-            <i class="bi bi-phone"></i>
+            <i class="bi bi-phone" />
             Book a consultation
         </btn>
 

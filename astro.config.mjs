@@ -11,9 +11,8 @@ import netlify from '@astrojs/netlify';
 // https://astro.build/config
 export default defineConfig({
   integrations: [purgecss(), sitemap()],
-
   i18n: {
-    locales: ["fr", "en"],
+    locales: ["en", "fr"],
     defaultLocale: "fr",
     routing: {
       prefixDefaultLocale: true
@@ -27,7 +26,8 @@ export default defineConfig({
     ],
   },
 
-  site: 'https://ntibusinessconsulting.netlify.com',
+  site: 'https://ntibusinessconsulting.netlify.app',
   // base: 'nbc',
+  output: 'static',
   adapter: netlify(),
 });

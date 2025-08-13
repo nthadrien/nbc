@@ -4,7 +4,7 @@ import 'clsx';
 export { renderers } from '../renderers.mjs';
 
 const $$Index = createComponent(($$result, $$props, $$slots) => {
-  return renderTemplate`<meta http-equiv="refresh" content="0;url=/nbc/fr/">`;
+  return renderTemplate`<meta http-equiv="refresh" content="0;url=/fr/">`;
 }, "D:/Personal Dev Projects/important/nti-consulting/src/pages/index.astro", void 0);
 
 const $$file = "D:/Personal Dev Projects/important/nti-consulting/src/pages/index.astro";

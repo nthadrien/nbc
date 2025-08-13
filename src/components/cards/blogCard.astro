@@ -17,12 +17,12 @@ const { remarkPluginFrontmatter } = await render(post);
 <div class="position-relative">
 
     <div class="position-absolute start-0 top-0 nav gap-2 p-3">
-        {post.data.tags.map( tag => <a href={`/nbc/${locale}/blog/${tag}`} class="btn btn-sm btn-primary">
+        {post.data.tags.map( tag => <a href={`/${locale}/blog/${tag}`} class="btn btn-sm btn-primary">
             {tag}
         </a>)}
     </div>
 
-    <img style="height: 220px; width:100%;" alt={post.data.featuredImg.url} class="bg-dark-subtle" src={`/nbc/${post.data.featuredImg.url}`}>
+    <img style="height: 220px; width:100%;" alt={post.data.featuredImg.url} class="bg-dark-subtle" src={post.data.featuredImg.url}>
 
     <div class="p-1">
        
@@ -35,7 +35,7 @@ const { remarkPluginFrontmatter } = await render(post);
 
         <p>{post.data.description}</p>
        
-        <a class="icon-link icon-link-hover text-capitalize" href={`/nbc/${locale}/blog/${post.data.title}`}>
+        <a class="icon-link icon-link-hover text-capitalize" href={`/${locale}/blog/${post.data.title}`}>
             {t("read")} <i class="bi bi-arrow-right ms-2 mb-1 small" />
         </a>
 

@@ -1,13 +1,13 @@
 import { a as createAstro, c as createComponent, d as renderComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute } from '../../chunks/astro/server_CzyFbPgW.mjs';
 import 'kleur/colors';
-import { r as renderEntry, g as getCollection } from '../../chunks/_astro_content_DkcjdUKO.mjs';
-import { g as getLangFromUrl, $ as $$Layout, u as useTranslations } from '../../chunks/Layout_BDRXeEiN.mjs';
-import { $ as $$BlogHeader } from '../../chunks/blogHeader_C8XS_j4t.mjs';
-import { $ as $$ContactUs } from '../../chunks/contactUs_CZIA6hQ2.mjs';
+import { r as renderEntry, g as getCollection } from '../../chunks/_astro_content_BzyKczLG.mjs';
+import { g as getLangFromUrl, $ as $$Layout, u as useTranslations } from '../../chunks/Layout_B2cSL3LT.mjs';
+import { $ as $$BlogHeader } from '../../chunks/blogHeader_B8QR5jDT.mjs';
+import { $ as $$ContactUs } from '../../chunks/contactUs_DGrZfUnB.mjs';
 /* empty css                                     */
 export { renderers } from '../../renderers.mjs';
 
-const $$Astro = createAstro("https://ntibusinessconsulting.netlify.com");
+const $$Astro = createAstro("https://ntibusinessconsulting.netlify.app");
 const getStaticPaths = async () => {
   const subPages = await getCollection("terms");
   return subPages.map((page) => ({
