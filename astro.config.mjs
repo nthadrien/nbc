@@ -27,7 +27,7 @@ export default defineConfig({
     ],
   },
 
-  // site: 'https://nthadrien.github.io',
+  site: 'https://ntibusinessconsulting.netlify.com',
   // base: 'nbc',
   adapter: netlify(),
 });
