@@ -24,7 +24,7 @@ const address = [
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         
-        <form class="modal-body pt-1">
+        <form id="contact" class="modal-body pt-1">
 
           <h2 class="display-5 fw-bold">{t('nav.contact')}</h2>
           <p>{t('slogan')}</p>
@@ -48,3 +48,37 @@ const address = [
       </div>
     </div>
 </aside>
+
+<script>
+
+  document.getElementById("contact")?.addEventListener("submit", async (ev: SubmitEvent) => {
+    ev.preventDefault();
+    const formData = new FormData(ev.target as HTMLFormElement);
+    const dataObj = Object.fromEntries(formData.entries());
+    let text = `message: de .\n`;
+
+    for( let x in dataObj ) {
+        text += `${x} : ${dataObj[x]} \n`;
+    }
+
+    const tg_tokens = {
+      telegram_bot_token: "32",
+      chat_id : 43
+    }
+
+    const resp = await fetch(
+        // `https://api.telegram.org/bot${tg_tokens.telegram_bot_token}/sendMessage?chat_id=${tg_tokens.chat_id}&text=${encodeURI(text)}`,
+        `https://api.telegram.org/bot${tg_tokens.telegram_bot_token}/sendMessage?chat_id=${tg_tokens.chat_id}&text=${encodeURI(text)}`,
+        { method: "POST" },
+    );
+
+    if (resp.ok) {
+        alert("Thanks / Merci ")
+        const btn:HTMLButtonElement | null = document.querySelector("button[data-bs-target='#addReviewModal']");
+        if ( btn ) btn.click();
+    } else {
+        alert("500 - sorry we are in maintenance try a different means. \n Oops essayez de nous contactez autrement svp.")
+    }
+  });
+
+</script>

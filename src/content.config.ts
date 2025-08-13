@@ -25,7 +25,10 @@ const teamCollection = defineCollection({
   loader: file("src/data/members.json"),
   schema: z.object({
     name: z.string(),
-    role: z.string(),
+    role: z.object({
+      en: z.string(),
+      fr: z.string()
+    }),
     pp : z.object({
       src: z.string(),
       alt: z.string()

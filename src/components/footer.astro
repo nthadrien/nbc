@@ -1,7 +1,8 @@
 ---
 import { getCollection } from "astro:content";
 import { getLangFromUrl, useTranslations } from "../i18n/utils"
-import Logo from "./logo.astro"
+import Logo from "./logo.astro";
+import { socials, address } from "../data/address";
 
 const locale = getLangFromUrl(Astro.url);
 const t = useTranslations(locale);
@@ -13,19 +14,7 @@ const links = [
     {name:"Blogs", to:refLink+"/#"},
     {name:"F.A.Q", to:refLink+"/about#faq"},
     {name: t('nav.who'), to:refLink+"/about-us#who"},
-]
-
-const socials = [
-    { icon: "bi bi-twitter-x", to:"#"},
-    { icon: "bi bi-facebook mx-1", to:"#"},
-    { icon: "bi bi-whatsapp", to:"#"}
-]
-
-const address = [
-    { icon: "bi bi-telephone-fill", to:"+237 667 316 329"},
-    { icon: "bi bi-google", to:"ntibusinessconsulting@gmail.com"},
-]
-
+];
 
 const services = await getCollection("services",({ id }) => {
     return id.startsWith(locale+"/");
@@ -44,7 +33,7 @@ const services = await getCollection("services",({ id }) => {
                 {item.to} 
             </span>)}
             <div class="mt-3">
-                {socials.map( it => <a href={it.to} class={`btn btn-outline-light rounded-circle fs-6 ${it.icon} me-1`} />)}
+                {socials.map( it => <a href={it.link} class={`btn btn-outline-light rounded-circle btn-sm ${it.icon} me-1`} />)}
             </div>
         </aside>
 

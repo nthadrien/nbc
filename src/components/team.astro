@@ -24,7 +24,7 @@ const t = useTranslations(locale);
 
         <div class="col-lg-7 row g-1">
             {members.map( (member, index) => <div data-iobs="n/a" data-iobs-transition={(index/1.2)+"s"} class="col-6 col-lg-4">
-                <TeamCard item={member} />
+                <TeamCard item={member} lang={locale} />
             </div>)}
         </div>
 	</div>

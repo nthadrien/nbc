@@ -16,6 +16,8 @@ export const languages = {
       "see":"see more",
       "talk":"Take The First Step.",
       "t.content":"Table Of Content",
+      'backto':"Back to",
+      "comm":"Comments",
 
       // pages
       'home.desc':"Transform your ideas into successful projects, from conception to impact.",
@@ -33,7 +35,7 @@ export const languages = {
       "step.three.desc": "Once the work is completed, we will provide the agreed-upon results, along with accurate an explanation of the outcomes.",
 
       'about.desc':'We deliver and provide Efficient Solutions for Your Financial Management Needs',
-      'about.story':"Nti Business consulting was Founded by passionate experts, our firm was born with a clear mission: to transform our clients' visions into tangible successes. ",
+      'about.story':"Nti Business consulting is a Cameroonian company Founded by passionate experts, our firm was born with a clear mission: to transform our clients' visions into tangible successes. ",
       'about.story1':"We found that many ambitious projects lacked the necessary support, whether at the planning, financing or evaluation level. This is why we have combined our skills to create a complete and integrated solution.",
       'about.vision':'We have helped many organizations realize their goals, providing them with the tools and expertise they need to thrive.',
       'about.vision.catch':"Our services are designed for a wide range of organizations.",
@@ -100,6 +102,8 @@ export const languages = {
       "see":"Voir plus",
       "talk":"Faites Le Premier Pas",
       "t.content":"Table Des Matières",
+      'backto':"Revenir sur la page",
+      "comm":"Comentaires",
 
       // pages
       'home.desc':"Transformer vos idées en projets réussis, de la conception à l'impact.",
@@ -117,7 +121,7 @@ export const languages = {
       "step.three.desc": "Une fois le travail terminé, nous fournirons les résultats convenus, ainsi qu'une explication précise des résultats.",
 
       'about.desc':'Nous livrons et fournissons des solutions efficaces pour vos besoins de gestion financière',
-      'about.story':"Nti Business consulting a été fondée par des experts passionnés, notre cabinet est né avec une mission claire : transformer les visions de nos clients en réussites tangibles.",
+      'about.story':"Nti Business consulting est une entreprise camerounaise fondée par des experts passionnés, notre cabinet est né avec une mission claire : transformer les visions de nos clients en réussites tangibles.",
       'about.story1':"Nous avons constaté que de nombreux projets ambitieux manquaient du soutien nécessaire, que ce soit au niveau de la planification, du financement ou de l'évaluation. C'est pourquoi nous avons uni nos compétences pour créer une solution complète et intégrée.",
       'about.vision':"Au fils des annees nous avons aidé de nombreuses organisations à concrétiser leurs objectifs, en leur fournissant les outils et l'expertise dont elles ont besoin pour prospérer.",
       'about.vision.catch':"Nos services sont conçus pour une large gamme d'organisations.",
@@ -148,7 +152,7 @@ export const languages = {
       "test.desc":"Voici ce que nos clients disent de nous",
 
       "feat.why":"Pourquoi Nous Choisir ?",
-      "feat.desc":"Partenariat de confiance, résultats prouvés.",
+      "feat.desc":"Partenariat de confiance, résultats garantis.",
       "feat.one":"Expertise Complète",
       "feat.one.desc":"Une équipe expérimentée couvrant toutes les phases du cycle de vie d'un projet.",
       "feat.two":"Approche Sur Mesure",

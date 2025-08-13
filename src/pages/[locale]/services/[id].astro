@@ -58,7 +58,7 @@ const expert = await getEntry(service.data.author);
         </nav>
 
         <main id="content" class="col-lg-8">
-            <p>Expert : {expert.data.name}, {expert.data.role} <span class="vr mx-3" /> {remarkPluginFrontmatter.minutesRead} </p>
+            <p>Expert : {expert.data.name}, {expert.data.role[locale]} <span class="vr mx-3" /> {remarkPluginFrontmatter.minutesRead} </p>
             <Content /> 
         </main>
         

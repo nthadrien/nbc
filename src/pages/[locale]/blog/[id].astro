@@ -3,8 +3,8 @@ import type { GetStaticPaths } from "astro";
 import { getCollection, render, getEntries, type CollectionEntry  } from 'astro:content';
 import { languages } from "../../../i18n/ui";
 import Layout from "../../../layouts/Layout.astro";
+import {getLangFromUrl, useTranslations } from "../../../i18n/utils";
 // 1. Generate a new path for every collection entry
-
 
 export const getStaticPaths = (async() => {
 
@@ -35,6 +35,9 @@ const { Content, remarkPluginFrontmatter, headings } = await render(post);
 
 
 const experts = await getEntries(post.data.authors);
+
+const loc = getLangFromUrl(Astro.url)
+const t = useTranslations(loc);
 ---
 
 
@@ -45,7 +48,7 @@ const experts = await getEntries(post.data.authors);
     <header style="min-height: 280px;" class="hero3 p-5 d-flex flex-column justify-content-center align-items-center">
 
 
-        <h1>posts</h1>
+        <h1>{post.data.tags}</h1>
         <p class="text-primary lead">
             {post.data.description}
         </p>
@@ -84,12 +87,17 @@ const experts = await getEntries(post.data.authors);
                 </li>)}
             </div>
         </nav>
+
+
+        <div>
+            <h3>{t('comm')}</h3>
+        </div>
        
 
         <section class="col-9">
-            <a data-iobs="right" href={`/nbc/${post.id.slice(0,2)}/services`} class="p-2 border-bottom border-primary">
-                back to services
-            </a>
+            <button data-iobs="right" onclick="window.history.back()" class="p-2 btn btn-primary">
+                {t('backto')} {post.data.tags[0]}
+            </button>
         </section>
 
         <section>

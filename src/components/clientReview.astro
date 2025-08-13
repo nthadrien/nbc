@@ -7,23 +7,57 @@ const t = useTranslations(locale);
 
 ---
 
-<section id="testimonials" class="container-fluid d-flex flex-column gap-3 justify-content-center align-items-center py-5">
+<section id="clients" class="container-fluid d-flex flex-column gap-3 justify-content-center align-items-center py-5">
 
     <div class="col-12 col-lg-8 col-xxl-7 text-center">
         <h3 class="display-6 fw-bold">{t('test.client')}</h3>
         <p class="lead text-primary">{t('test.desc')}</p>
     </div>
 
-    <aside class="container row g-3 mx-auto">
-        {[1,2,3].map( testi => <div class="col-md-6 col-lg-4">
-            <TestimonyCard />
-        </div>)}
-    </aside>
+</section>
 
-    <div class="container text-center">
-        o o o
+<section id="carouselClientsReviews" class="carousel slide p-3" data-bs-ride="carousel">
+
+    <div class="carousel-inner">
+
+        <aside class="carousel-item active">
+            <div class="d-flex gap-2 overflow-x-auto hide-scroll-bar">
+                {[1,2,3].map( testi => <div style="min-width: 290px;" class="col">
+                    <TestimonyCard />
+                </div>)}
+            </div>
+        </aside>
+
+        <aside class="carousel-item">
+            <div class="d-flex gap-2 overflow-x-auto hide-scroll-bar">
+                {[1,2,3].map( testi => <div style="min-width: 290px;" class="col">
+                    <TestimonyCard />
+                </div>)}
+            </div>
+        </aside>
+
+        <aside class="carousel-item">
+            <div class="d-flex gap-2 overflow-x-auto hide-scroll-bar">
+                {[1,2,3].map( testi => <div style="min-width: 290px;" class="col">
+                    <TestimonyCard />
+                </div>)}
+            </div>
+        </aside>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselClientsReviews" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span> nn
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselClientsReviews" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span> bb
+    </button>
+
+    <div class="carousel-indicators">
+        <button class="border border-2 active" type="button" data-bs-target="#carouselClientsReviews" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button class="border border-2" type="button" data-bs-target="#carouselClientsReviews" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button class="border border-2" type="button" data-bs-target="#carouselClientsReviews" data-bs-slide-to="2" aria-label="Slide 3"></button>
     </div>
 
 </section>
-
-

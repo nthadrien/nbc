@@ -29,7 +29,7 @@ const t = useTranslations(locale);
 
 <Layout>
 
-	<BlogHeader currentPage={page.id.replaceAll("-"," ")} hText="" />
+	<BlogHeader hText={page.id.replaceAll("-"," ")} currentPage="" />
 
 	
     <div class="container-xl mx-auto nav flex-column flex-lg-row py-5 px-3 position-relative">
@@ -56,14 +56,20 @@ const t = useTranslations(locale);
     </div>
 
 	<ContactUs />
+
+    
 </Layout>
 
-<style>
+<style is:global>
     * {
         font-size: 12px;
     }
 
     h1, h2 , h3, h4 , h5 {
         margin: 1rem 0;
+    }
+    
+    #content > b, #content > strong {
+        color: brown;
     }
 </style>

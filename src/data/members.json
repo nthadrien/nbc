@@ -1,29 +1,38 @@
 [
     {
         "id":1,
-        "name":"Nti Boloa Alphonse Emmanuel",
-        "role":"CEO of Nti COnsulting",
+        "name":"Nti Biloa Alphonse .E",
+        "role":{
+            "en": "Auditor and Project Manager",
+            "fr":"Auditeur et Gestionnaire de projet"
+        },
         "pp": {
-            "src":"/imgs/team/t-1.jpg",
-            "alt":"image du CEO"
+            "src":"/imgs/team/alphonse.jpg",
+            "alt":"img alp"
         }
     },
     {
         "id":2,
-        "name":"Un autre membre 1",
-        "role":"CEO of Nti COnsulting",
+        "name":"Anaba Mariette Léa",
+        "role":{
+            "en": "Auditor and Management Controller",
+            "fr":"Auditrice et Contrôleur de Gestion"
+        },
         "pp": {
-            "src":"/imgs/team/t-2.jpg",
-            "alt":"image du CEO"
+            "src":"/imgs/team/mariette.jpg",
+            "alt":"img lea"
         }
     },
     {
         "id":3,
-        "name":"AUtre membre hahahaha ",
-        "role":"CEO of Nti COnsulting",
+        "name":"Biloa Anaba Gaspard",
+        "role":{
+            "en": "Project Manager",
+            "fr":"Gestionnaire de projet"
+        },
         "pp": {
-            "src":"/imgs/team/t-3.jpg",
-            "alt":"image du CEO"
+            "src":"/imgs/team/gaspard.jpg",
+            "alt":"img gasp"
         }
     }
 ]
