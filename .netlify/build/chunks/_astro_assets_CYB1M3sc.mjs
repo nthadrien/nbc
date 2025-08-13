@@ -1,6 +1,6 @@
 import { isRemotePath } from '@astrojs/internal-helpers/path';
 import { A as AstroError, o as NoImageMetadata, t as toStyleString, p as FailedToFetchRemoteImageDimensions, E as ExpectedImageOptions, q as ExpectedImage, s as ExpectedNotESMImage, I as InvalidImageService, a as createAstro, c as createComponent, v as ImageMissingAlt, m as maybeRenderHead, b as addAttribute, w as spreadAttributes, r as renderTemplate, x as ExperimentalFontsNotEnabled, y as FontFamilyNotFound, u as unescapeHTML } from './astro/server_CzyFbPgW.mjs';
-import { D as DEFAULT_HASH_PROPS } from './_astro_content_CDBseT-m.mjs';
+import { D as DEFAULT_HASH_PROPS } from './_astro_content_DkcjdUKO.mjs';
 import '@astrojs/internal-helpers/remote';
 import { t as typeHandlers, a as types } from './index_DfOMS8cV.mjs';
 import * as mime from 'mrmime';

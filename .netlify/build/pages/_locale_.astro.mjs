@@ -1,12 +1,12 @@
 import { a as createAstro, c as createComponent, m as maybeRenderHead, r as renderTemplate, b as addAttribute, d as renderComponent } from '../chunks/astro/server_CzyFbPgW.mjs';
 import 'kleur/colors';
-import { g as getLangFromUrl, u as useTranslations, $ as $$Layout, l as languages } from '../chunks/Layout_kr5rve1c.mjs';
-import { $ as $$ContactUs } from '../chunks/contactUs_DzMPLby2.mjs';
+import { g as getLangFromUrl, u as useTranslations, $ as $$Layout, l as languages } from '../chunks/Layout_BDRXeEiN.mjs';
+import { $ as $$ContactUs } from '../chunks/contactUs_CZIA6hQ2.mjs';
 import 'clsx';
-import { $ as $$Services } from '../chunks/services_EMMuM0LX.mjs';
-import { $ as $$Steps } from '../chunks/steps_DjKouZgi.mjs';
-import { $ as $$BlogCard } from '../chunks/blogCard_BRUSBgdk.mjs';
-import { g as getCollection } from '../chunks/_astro_content_CDBseT-m.mjs';
+import { $ as $$Services } from '../chunks/services_2GqWbRMm.mjs';
+import { $ as $$Steps } from '../chunks/steps_CMLEqWQI.mjs';
+import { $ as $$BlogCard } from '../chunks/blogCard_Oa5qKU-R.mjs';
+import { g as getCollection } from '../chunks/_astro_content_DkcjdUKO.mjs';
 export { renderers } from '../renderers.mjs';
 
 const $$Astro$3 = createAstro("https://ntibusinessconsulting.netlify.com");

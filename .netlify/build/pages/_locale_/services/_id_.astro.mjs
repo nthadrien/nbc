@@ -1,7 +1,7 @@
 import { a as createAstro, c as createComponent, d as renderComponent, r as renderTemplate, m as maybeRenderHead, b as addAttribute } from '../../../chunks/astro/server_CzyFbPgW.mjs';
 import 'kleur/colors';
-import { r as renderEntry, c as getEntry, g as getCollection } from '../../../chunks/_astro_content_CDBseT-m.mjs';
-import { g as getLangFromUrl, $ as $$Layout, l as languages, u as useTranslations } from '../../../chunks/Layout_kr5rve1c.mjs';
+import { r as renderEntry, c as getEntry, g as getCollection } from '../../../chunks/_astro_content_DkcjdUKO.mjs';
+import { g as getLangFromUrl, $ as $$Layout, l as languages, u as useTranslations } from '../../../chunks/Layout_BDRXeEiN.mjs';
 import { $ as $$ServicesHeader } from '../../../chunks/servicesHeader_DRnJHCZO.mjs';
 /* empty css                                      */
 export { renderers } from '../../../renderers.mjs';

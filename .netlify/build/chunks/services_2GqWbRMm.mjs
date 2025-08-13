@@ -1,8 +1,8 @@
 import { a as createAstro, c as createComponent, m as maybeRenderHead, b as addAttribute, r as renderTemplate, d as renderComponent } from './astro/server_CzyFbPgW.mjs';
 import 'kleur/colors';
-import { g as getCollection } from './_astro_content_CDBseT-m.mjs';
+import { g as getCollection } from './_astro_content_DkcjdUKO.mjs';
 import 'clsx';
-import { g as getLangFromUrl, u as useTranslations } from './Layout_kr5rve1c.mjs';
+import { g as getLangFromUrl, u as useTranslations } from './Layout_BDRXeEiN.mjs';
 
 const $$Astro$1 = createAstro("https://ntibusinessconsulting.netlify.com");
 const $$ServiceCard = createComponent(($$result, $$props, $$slots) => {

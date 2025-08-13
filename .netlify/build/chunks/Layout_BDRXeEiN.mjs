@@ -1,7 +1,7 @@
 import { c as createComponent, m as maybeRenderHead, r as renderTemplate, b as addAttribute, a as createAstro, d as renderComponent, f as renderScript, g as renderHead, h as renderSlot } from './astro/server_CzyFbPgW.mjs';
 import 'kleur/colors';
 /* empty css                          */
-import { g as getCollection } from './_astro_content_CDBseT-m.mjs';
+import { g as getCollection } from './_astro_content_DkcjdUKO.mjs';
 import 'clsx';
 
 const languages = {

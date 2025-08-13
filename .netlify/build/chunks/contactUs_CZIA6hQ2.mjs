@@ -1,7 +1,7 @@
 import { a as createAstro, c as createComponent, m as maybeRenderHead, r as renderTemplate } from './astro/server_CzyFbPgW.mjs';
 import 'kleur/colors';
 import 'clsx';
-import { g as getLangFromUrl, u as useTranslations } from './Layout_kr5rve1c.mjs';
+import { g as getLangFromUrl, u as useTranslations } from './Layout_BDRXeEiN.mjs';
 
 const $$Astro = createAstro("https://ntibusinessconsulting.netlify.com");
 const $$ContactUs = createComponent(($$result, $$props, $$slots) => {

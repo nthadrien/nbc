@@ -1,4 +1,4 @@
-import { C as CONTENT_LAYER_TYPE, d as defineCollection, b as reference } from './_astro_content_CDBseT-m.mjs';
+import { C as CONTENT_LAYER_TYPE, d as defineCollection, b as reference } from './_astro_content_DkcjdUKO.mjs';
 import { existsSync, promises } from 'node:fs';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import yaml from 'js-yaml';
@@ -17,7 +17,7 @@ import pLimit from 'p-limit';
 import picomatch from 'picomatch';
 import { glob as glob$1 } from 'tinyglobby';
 import 'clsx';
-import { g as getLangFromUrl } from './Layout_kr5rve1c.mjs';
+import { g as getLangFromUrl } from './Layout_BDRXeEiN.mjs';
 
 const isWindows = typeof process !== "undefined" && process.platform === "win32";
 function normalizePath(id) {

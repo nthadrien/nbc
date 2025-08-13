@@ -1,9 +1,9 @@
 import { a as createAstro, c as createComponent, m as maybeRenderHead, r as renderTemplate, b as addAttribute, d as renderComponent } from '../../chunks/astro/server_CzyFbPgW.mjs';
 import 'kleur/colors';
-import { g as getLangFromUrl, u as useTranslations, $ as $$Layout, l as languages } from '../../chunks/Layout_kr5rve1c.mjs';
+import { g as getLangFromUrl, u as useTranslations, $ as $$Layout, l as languages } from '../../chunks/Layout_BDRXeEiN.mjs';
 import 'clsx';
-import { g as getCollection } from '../../chunks/_astro_content_CDBseT-m.mjs';
-import { $ as $$Steps } from '../../chunks/steps_DjKouZgi.mjs';
+import { g as getCollection } from '../../chunks/_astro_content_DkcjdUKO.mjs';
+import { $ as $$Steps } from '../../chunks/steps_CMLEqWQI.mjs';
 export { renderers } from '../../renderers.mjs';
 
 const $$Astro$5 = createAstro("https://ntibusinessconsulting.netlify.com");
