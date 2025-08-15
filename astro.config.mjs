@@ -14,20 +14,15 @@ export default defineConfig({
   i18n: {
     locales: ["en", "fr"],
     defaultLocale: "fr",
-    routing: {
-      prefixDefaultLocale: true
-    }
   },
-
   markdown: {
     remarkPlugins: [remarkReadingTime],
     rehypePlugins: [
       rehypeHeadingIds
     ],
   },
-
   site: 'https://ntibusinessconsulting.netlify.app',
   // base: 'nbc',
   output: 'static',
-  // adapter: netlify(),
+  adapter: netlify(),
 });

@@ -13,7 +13,7 @@ const address = [
 ---
 
 <!-- Modal -->
-<aside class="modal fade" data-bs-backdrop="static" id="contactUs" tabindex="-1" aria-labelledby="contactUsLabel" aria-hidden="true">
+<aside class="modal fade p-3" data-bs-backdrop="static" id="contactUs" tabindex="-1" aria-labelledby="contactUsLabel" aria-hidden="true">
 
     <div class="modal-dialog modal-dialog-centered">
 
@@ -21,7 +21,7 @@ const address = [
 
         <div class="modal-header border-0 py-1">
           <h1 class="modal-title fs-5" id="exampleModalLabel">{t('talk')}</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button id="btn-f-close" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         
         <form id="contact" class="modal-body pt-1">
@@ -62,8 +62,8 @@ const address = [
     }
 
     const tg_tokens = {
-      telegram_bot_token: "32",
-      chat_id : 43
+      telegram_bot_token: "7882103524:AAFO-OU7A2mpdEDDXDXgU16-k9YuUIvvFrU",
+      chat_id : "-1002544643338"
     }
 
     const resp = await fetch(
@@ -74,11 +74,10 @@ const address = [
 
     if (resp.ok) {
         alert("Thanks / Merci ")
-        const btn:HTMLButtonElement | null = document.querySelector("button[data-bs-target='#addReviewModal']");
+        const btn:HTMLButtonElement | null = document.querySelector("button[data-bs-target='#contactUs']");
         if ( btn ) btn.click();
     } else {
         alert("500 - sorry we are in maintenance try a different means. \n Oops essayez de nous contactez autrement svp.")
     }
   });
-
 </script>
