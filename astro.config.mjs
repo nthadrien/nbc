@@ -29,5 +29,5 @@ export default defineConfig({
   site: 'https://ntibusinessconsulting.netlify.app',
   // base: 'nbc',
   output: 'static',
-  adapter: netlify(),
+  // adapter: netlify(),
 });
